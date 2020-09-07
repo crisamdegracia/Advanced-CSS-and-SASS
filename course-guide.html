@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Advanced CSS and SASS</title>
+        <script src="jquery-v3.5.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Accordion - Default functionality</title>
+        <script src="jquery-v3.5.1.min.js"></script>
+        <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.css">
+
+        <!--                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+        <!--        <link rel="stylesheet" href="/resources/demos/style.css">-->
+        <!--        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+        <!--        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+        <style>
+            body {
+                color: #ddd;
+            }
+            .ui-accordion-content {
+                background-color: #333;
+                color: #ddd;
+            }
+
+            pre {
+                background-color: #222;
+                font: #ddd;
+                font-family:monospace;
+                padding: 20px;
+            }
+            h5 {
+                color: aqua;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="accordion">
+            <h3>f2v6 | CSS Universal reset </h3>
+            <div>
+
+                <pre>
+                   * {
+
+                        margin: 0;
+                        padding: 0;
+                         box-sizing: border-box;
+                    }
+
+                    ---------------------------------------
+                       every browsers add margin and padding so we need to add this everytime
+
+                   box-sizing - it change the box model so that the borders and paddings are no longer added to the total width or the total height
+                       - without this any paddings and borders are added to the height or width of an element
+               </pre>
+            
+                <h5> Good Practice | To inherit to their child elements</h5>
+                <pre>
+                body {
+                    font-family: "Lato", sans-serif;
+                    font-weight: 400;
+                    font-size: 16px ;
+                    line-height: 1.7;
+                    color: #777;
+                    padding: 30px;
+                }
+                </pre>
+                <pre>
+
+                viewheight - at every point of the box it should 
+                be 95% of the viewport height
+                linear gradient args - 1. location, 2.color, 3 color,
+                clip-path: mahirap magets pa.
+
+
+                .header {
+                    height: 95vh ;
+                    background-image: linear-gradient(
+                        to right bottom,
+                        rgba(126, 213, 111, 0.8),
+                        rgba(40, 180, 131, 0.8)),
+                        url(../img/hero.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0 );
+                }
+                }
+                </pre>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+
+            </div>
+            <h3>Section 3</h3>
+            <div>
+
+            </div>
+            <h3>Section 4</h3>
+            <div>
+
+            </div>
+        </div>
+
+
+    </body>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
+    </script>
+</html>
