@@ -40,4 +40,15 @@ be 95% of the viewport height
     background-size: cover;
     background-position: center;
     clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0 );
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
 }
