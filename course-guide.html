@@ -54,7 +54,7 @@
                    box-sizing - it change the box model so that the borders and paddings are no longer added to the total width or the total height
                        - without this any paddings and borders are added to the height or width of an element
                </pre>
-            
+
                 <h5> Good Practice | To inherit to their child elements</h5>
                 <pre>
                 body {
@@ -88,18 +88,81 @@
                 }
                 </pre>
             </div>
-            <h3>Section 2</h3>
-            <div>
+            <h3>f2v6 - 006 Building the Header - Part 1 </h3>
 
-            </div>
-            <h3>Section 3</h3>
             <div>
+                <pre>
+    parent container - position relative - para gumana
+    second container - absolute - 
 
+</pre>
             </div>
-            <h3>Section 4</h3>
+            <h3>f2v7 - 007 Building the Header - Part 2</h3>
             <div>
+                <pre>
+                display: block -  occupy whte while width
 
+
+               to center text -  children block need to be display:block
+               explain - left: 50%; - 50% of the size of the left - 
+                        - sa gitna ng main container mag start ung 50% left
+                        - ganun din sa top;
+               - now to center -  is use transform(translate(-50%,-50%))             - so we will remove the relation of 50% of left and 50% to the
+                   - main container, that's why we set it -50%
+                .text-box {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        background-color: red;
+                        transform: translate(-50%,-50%)
+
+                    }
+
+
+
+                </pre>
+
+                <pre>
+               top:40%;
+                left: 50%;
+                are in relation in the main block element
+                while transform is only related to the main element itself
+           </pre>
             </div>
+            <h3>f2v8 - 008 Creating Cool CSS Animations </h3>
+            <div>
+                <pre>
+                    animation:  moveInLeft 3s ease-out;
+                </pre>
+                
+                <pre>
+
+                @keyframes moveInLeft {
+                    0% {
+                        opacity: 0;
+                        transform: translate(-100px);
+                    }
+
+                    80% {
+
+                        transform: translate(10px);
+                    }
+
+                    100%{
+                        opacity: 1;
+                        transform: translate(0);
+
+                    }
+                }
+                </pre>
+            </div>
+            
+            <h3>f2v9 - 009 Building a Complex Animated Button - Part 1</h3>
+            <div>
+                <pre>go to the style.css</pre>
+            </div>
+            
+                    8:17 minutes
         </div>
 
 
@@ -107,7 +170,10 @@
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-            $( "#accordion" ).accordion();
+            $( "#accordion" ).accordion({
+                'collapsible': true,
+                'heightStyle': "content"
+            });
         } );
     </script>
 </html>
