@@ -5,13 +5,32 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
+
+
+Follow these CSS code techniques to make our life easier.
 */
 
-* {
-
+*,
+*::after,
+*::before {
+/* Global reset while following inheritance */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
+    
+}
+
+html {
+    /*
+    100% is equal to 16px - but we only want it 10px 
+    so the computation 10/16 = .625 * 100%
+    simple but very powerful on media-querries
+    - this will allow user to zoom in page automatically
+    - not only to change the font size but also to zoom in on the page
+    a widely use technique CSS Dev Community
+    but not supported below IE 9
+    */
+    font-size: 62.5%;
 }
 
 /*
@@ -20,10 +39,12 @@ Import! this will be inherited to their child elements
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px ;
+/*    font-size: 16px ;*/
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    
+    box-sizing: border-box;
 }
 
 /*
@@ -45,16 +66,18 @@ be 95% of the viewport height
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 
 /*
+to center element
+position: absolute;
 top:40%;
 left: 50%;
 are in relation in the main block element
@@ -79,54 +102,54 @@ while transform is only related to the main element itself
 
     /*to remove the shaking*/
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 
 
-  /* the name we created @ketframes 
-    animation-name: moveInLeft;
+/* the name we created @ketframes 
+animation-name: moveInLeft;
 
-    for the animation to start 
-    animation-duration: 3s;
+for the animation to start 
+animation-duration: 3s;
 
-    animation to wait before starting 
+animation to wait before starting 
 
-    -webkit-animation-delay: 3s;
-    -o-animation-delay: 3s;
-    animation-delay: 3s;
+-webkit-animation-delay: 3s;
+-o-animation-delay: 3s;
+animation-delay: 3s;
 
-    uulit ung animation kung ila naka set dito 
-    animation-iteration-count: 3;
+uulit ung animation kung ila naka set dito 
+animation-iteration-count: 3;
 
-    animation-timing-function: ease-out;
+animation-timing-function: ease-out;
 
-    */
+*/
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 800;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation:  moveInLeft 3s ease-out;
 }
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.74rem;
 }
 
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translate(-100px);
+        transform: translate(-1rem);
     }
 
     80% {
 
-        transform: translate(10px);
+        transform: translate(1rem);
     }
 
     100%{
@@ -136,29 +159,41 @@ while transform is only related to the main element itself
     }
 }
 
+@keyframes moveInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 
 
 
+/*setting this to relative so child block and make display:absolute */
 
-    /*setting this to relative so child block and make display:absolute */
+/*
+shorthand - 
+animation:  moveInLeft 3s ease-out;
+animation-duration: 3s;
 
-   /*
-    shorthand - 
-    animation:  moveInLeft 3s ease-out;
-    animation-duration: 3s;
-
-    */
+*/
 
 .btn,
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 100px;
-    padding: 15px 40px;
+    border-radius: 10rem;
+    padding: 1.5rem 4rem;
     display: inline-block;
     position: relative;
     transition: all .3s;
+    font-size: 1.6rem;
+    font-weight: 800;
 }
 
 .btn-white {
@@ -166,50 +201,63 @@ while transform is only related to the main element itself
     color: #777;
 }
 
-  /* args - X Y Blur color */
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0, 2); 
+    /*to go a bit up */
+    transform: translateY(-.3rem);
+    /* args - X and Y Blur color */
+    box-shadow: 0 1rem 2rem rgba(0,0,0, 2); 
 }
 
 /*when users click*/
 .btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-.1rem);
     background-color: #333;
     color: #fff;
-    box-shadow: 0 5px 10px rgba(0,0,0, 2); 
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, 2); 
 }
+
 
 /*
 behind the button
 1st it to appear - content:""
+height: 100%; and width - paralumabas
 */
 .btn::after {    
     content: "";
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position:  absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    
+
     /*fading effect*/
     transition: all .3s;
 }
 
 .btn-white::after {
     background-color: #fff;
-    background-color: #333;
 }
 
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.7);
-    
+
     /* A fading effect */
     opacity: 0;
+
+}
+
+.btn-animated {
+    /* Args =  name - duration - time function - delay*/
+    animation: moveInFromBottom .5s ease-out .75s;
     
+    /*
+    it'll auto apply the style up to 0% b4 D animation starts
+    now the style will be applied before the animation starts. simple by using this fill-mode:backwards
+    */
+    animation-fill-mode: backwards;
 }
 
 

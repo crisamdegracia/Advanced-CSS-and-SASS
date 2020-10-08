@@ -134,7 +134,7 @@
                 <pre>
                     animation:  moveInLeft 3s ease-out;
                 </pre>
-                
+
                 <pre>
 
                 @keyframes moveInLeft {
@@ -156,13 +156,127 @@
                 }
                 </pre>
             </div>
-            
+
             <h3>f2v9 - 009 Building a Complex Animated Button - Part 1</h3>
             <div>
                 <pre>go to the style.css</pre>
+
+                <pre>
+
+
+                   F2v10 na ata to
+
+                    it'll auto apply the style up to 0% b4 D animation starts
+                    now the style will be applied before the animation starts. simple by using this fill-mode:backwards
+                    */
+                    animation-fill-mode: backwards;
+
+                   ang nangyari kasi - kahit mag load ung page - mag appear muna ung button - after that na mag activate ung animation
+
+                   parang ang alternative is opacity 0 muna ung sa button 
+                   then when this animation applies back to 1 na.
+                </pre>
             </div>
-            
-                    8:17 minutes
+
+            <h3>f3v012 - 012 Three Pillars of Writing Good HTML and CSS (Never Forget Them) </h3>
+            <div>
+                <pre>
+
+                          Responsive Design
+
+                           Maintainable and scalable code
+
+                            Web performance 
+                              - Reduce http request
+                       </pre>
+            </div>
+            <h3>f3v013 - 013 How CSS Works Behind the Scenes An Overview </h3>
+            <div>
+                <img width="400px" src="../Advanced-CSS-and-SASS/images/Advanced-css-img-1.png" alt="">
+                <pre>
+
+                </pre>
+            </div>
+
+            <h3>f3v014 - 014 How CSS is Parsed Part 1 The Cascade and Specificity </h3>
+            <div>
+                <img src="../Advanced-CSS-and-SASS/images/Advanced-css-img2.png" width="500px" alt="">
+                <pre>
+
+                </pre>
+                <h5> 1st Step Parsing Phase</h5>
+                <ul>
+                    <li>Process of combining diferrent style sheets and resolving conflicts between diffrent CSS rules and declarations, when more than one rule applies to a certain element</li>
+                    <li> default browser declaration are call - BROWSER(USER AGENT) <ul>
+                        <li> it is when the browser auto style our html - </li>
+                        </ul></li>
+                    <li>
+                        <h5>SPECIFICITY</h5>
+                        From Left To To RIght
+                        <ul>
+                            <li>!important - has the highes priority
+                                <ul>
+                                    <li>but only use it as last resource </li>
+                                </ul></li>
+                            <li>
+                                starting to most specific category
+                            </li>
+                            <li>inline-style</li>
+                            <li>if the inline-style has 1 point it will win against all from the image example - because that is the most specific category.</li>
+
+                        </ul>  
+                        <img src="../Advanced-CSS-and-SASS/images/advanced-css-imag3.png" alt="">      
+                    </li>
+                    <li>When it has a tie declaration occurs - the last declaration wins</li>
+                    <li><img src="../Advanced-CSS-and-SASS/images/Advanced-css-img4.png" alt=""></li>
+                </ul>
+                <h5> 2nd step is to process the finall css value</h5>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+
+            <h3>f3v016 How CSS is Parsed Part 2 Value Processing</h3>
+            <div>
+                em / ems - uses the parent element
+
+                rem - uses the root font size element
+                    - 1rem = 10px if the root value is 10px
+                    - because 1 rem is exactly the root font-size
+
+                <img src="../Advanced-CSS-and-SASS/images/advanced-css-img-5.png" alt="">
+            </div>
+
+            <h3>f2v018 Converting px to rem An Effective Workflow</h3>
+            <div>
+                <pre>
+                    
+                    *,
+                    *::after,
+                    *::before {
+
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: inherit;
+                        
+                        
+                        
+                    html {
+                        /*
+                        100% is equal to 16px - but we only want it 10px 
+                        so the computation 10/16 = .625 * 100%
+                        simple but very powerful on media-querries
+                        - this will allow user to zoom in page automatically
+                        - not only to change the font size but also to zoom in on the page
+                        a widely use technique CSS Dev Community
+                        but not supported below IE 9
+                        */
+                        font-size: 62.5%;
+                    }
+    
+                </pre>
+            </div>
+
         </div>
 
 
