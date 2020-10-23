@@ -14,6 +14,9 @@
         <!--        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
         <!--        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
         <style>
+            html {
+                /*                font-size: 62.5%;*/
+            }
             body {
                 color: #ddd;
             }
@@ -23,13 +26,20 @@
             }
 
             pre {
+                width: auto;
+                display: inline-block;
                 background-color: #222;
                 font: #ddd;
                 font-family:monospace;
-                padding: 20px;
+                padding: 20px 5px;
             }
             h5 {
                 color: aqua;
+            }
+
+            .img-size {
+                width: 100%;
+
             }
         </style>
 
@@ -100,15 +110,16 @@
             <h3>f2v7 - 007 Building the Header - Part 2</h3>
             <div>
                 <pre>
-                display: block -  occupy whte while width
+                display: block -  occupy the whole width
 
 
                to center text -  children block need to be display:block
                explain - left: 50%; - 50% of the size of the left - 
                         - sa gitna ng main container mag start ung 50% left
                         - ganun din sa top;
-               - now to center -  is use transform(translate(-50%,-50%))             - so we will remove the relation of 50% of left and 50% to the
-                   - main container, that's why we set it -50%
+                - now to center -  is use transform(translate(-50%,-50%))    
+                - so we will remove the relation of 50% of left and 50% to the
+                - main container, that's why we set it -50%
                 .text-box {
                         position: absolute;
                         top: 50%;
@@ -123,7 +134,7 @@
                 </pre>
 
                 <pre>
-               top:40%;
+                top:40%;
                 left: 50%;
                 are in relation in the main block element
                 while transform is only related to the main element itself
@@ -192,7 +203,7 @@
             </div>
             <h3>f3v013 - 013 How CSS Works Behind the Scenes An Overview </h3>
             <div>
-                <img width="400px" src="../Advanced-CSS-and-SASS/images/Advanced-css-img-1.png" alt="">
+                <img class="img-size" src="../Advanced-CSS-and-SASS/images/Advanced-css-img-1.png" alt="">
                 <pre>
 
                 </pre>
@@ -200,7 +211,7 @@
 
             <h3>f3v014 - 014 How CSS is Parsed Part 1 The Cascade and Specificity </h3>
             <div>
-                <img src="../Advanced-CSS-and-SASS/images/Advanced-css-img2.png" width="500px" alt="">
+                <img class="img-size" src="../Advanced-CSS-and-SASS/images/Advanced-css-img2.png" width="500px" alt="">
                 <pre>
 
                 </pre>
@@ -241,16 +252,16 @@
                 em / ems - uses the parent element
 
                 rem - uses the root font size element
-                    - 1rem = 10px if the root value is 10px
-                    - because 1 rem is exactly the root font-size
+                - 1rem = 10px if the root value is 10px
+                - because 1 rem is exactly the root font-size
 
-                <img src="../Advanced-CSS-and-SASS/images/advanced-css-img-5.png" alt="">
+                <img class="img-size" src="../Advanced-CSS-and-SASS/images/advanced-css-img-5.png" alt="">
             </div>
 
-            <h3>f2v018 Converting px to rem An Effective Workflow</h3>
+            <h3>f3v018 Converting px to rem An Effective Workflow</h3>
             <div>
                 <pre>
-                    
+
                     *,
                     *::after,
                     *::before {
@@ -258,9 +269,9 @@
                         margin: 0;
                         padding: 0;
                         box-sizing: inherit;
-                        
-                        
-                        
+
+
+
                     html {
                         /*
                         100% is equal to 16px - but we only want it 10px 
@@ -273,10 +284,118 @@
                         */
                         font-size: 62.5%;
                     }
-    
+
+                </pre>
+            </div>
+            <h3>f3v19 - 019 How CSS Renders a Website The Visual Formatting Model </h3>
+
+            <div>
+                <pre>
+
+                </pre>
+                <img class="img-size"  src="./images/advance-css-img6.jpg" alt="">
+                <img class="img-size" src="./images/advanced-css-img-7.jpg" alt="">
+                <img class="img-size" src="./images/advanced-css-img-8.jpg" alt="">
+
+            </div>
+
+            <h3>f3020 CSS Architecture Components and BEM</h3>
+            <div>
+                <pre>
+                        BEM - Block Element Modifier
+                    </pre>
+                <img class="img-size" src="./images/advanced-css-img-9.jpg" alt="">
+                <img class="img-size" src="./images/advanced-css-img-10.jpg" alt="">
+
+                <pre>
+                    base - basic product definitions
+                    components - one file for each component
+                    layout - where we define the overall layout of the project
+                    pages - where we have styles for specific pages of the project
+                    themes - if we want to implement different visual themes
+                    abstracts - where we put code that doesn't output any CSS, such as variables or mix-ins
+                    vendor - where all third party css goes
+                </pre>
+            </div>
+            <h3>f3v021 Implementing BEM in the Natours Project</h3>
+            <div>
+                <pre>
+
+                </pre>
+                <img class="img-size" src="./images/advanced-css-img-11.jpg" alt="">
+            </div>
+            <h3>f4v023 What is Sass</h3>
+            <div>
+                <img class="img-size" src="./images/advanced-css-img-12.jpg" alt="">
+                <img class="img-size" src="./images/advanced-css-img-13.jpg" alt="">
+                <pre> Sass Syntax - rely on indentation and has no bracketing, confusing. </pre>
+            </div>
+
+            <h3>f4v024 First Steps with Sass Variables and Nesting</h3>
+            <div>
+                <pre>
+                    Codepen - I dont like it.
                 </pre>
             </div>
 
+            <h3>f4v027 NPM Packages Lets Install Sass Locally</h3>
+            <div>
+                <pre>
+                    npm init 
+
+                    npm install node-sass --save-dev
+
+                    npm uninstall node-sass --save-dev
+                </pre>
+            </div>
+            <h3> f4v028 NPM Scripts Lets Write and Compile Sass Locally</h3>
+            <div>
+                <pre>
+                                {
+                  "name": "natours",
+                  "version": "1.0.0",
+                  "description": "1st Course CSS and SASS SCSS",
+                  "main": "index.js",
+                  "scripts": {
+                    "compile:sass": "node-sass sass/main.scss css/style.css"
+                  },
+                  "author": "Sambee",
+                  "license": "ISC",
+                  "devDependencies": {
+                    "node-sass": "^4.14.1"
+                  }
+                }
+
+                
+                input file sass/main.scss
+                output file css/style.css
+                
+                
+                </pre>
+                
+                <pre>
+                    
+                    To watch our main.scss file so we dont need to reload everytime
+                    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+                        -we add (-w) w means watch 
+                        - so just by saving ctrl+s - it will auto compile.
+                </pre>
+            </div>
+            
+            <h3> f4v029 The Easiest Way of Automatically Reloading a Page on File Changes </h3>
+            <div>
+                <pre>
+                    npm live server
+                    brackets has this already
+                </pre>
+            </div>
+            
+            <h3>f5v031 Converting Our CSS Code to Sass Variables and Nesting</h3>
+            <div>
+                <pre>
+                    
+                </pre>
+            </div>
         </div>
 
 

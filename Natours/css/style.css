@@ -1,27 +1,18 @@
 /*
 COLORS:
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-
-
 Follow these CSS code techniques to make our life easier.
 */
-
 *,
 *::after,
 *::before {
-/* Global reset while following inheritance */
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    
-}
+  /* Global reset while following inheritance */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 html {
-    /*
+  /*
     100% is equal to 16px - but we only want it 10px 
     so the computation 10/16 = .625 * 100%
     simple but very powerful on media-querries
@@ -30,82 +21,63 @@ html {
     a widely use technique CSS Dev Community
     but not supported below IE 9
     */
-    font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 /*
 Import! this will be inherited to their child elements
 */
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-/*    font-size: 16px ;*/
-    line-height: 1.7;
-    color: #777;
-    padding: 3rem;
-    
-    box-sizing: border-box;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*    font-size: 16px ;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box; }
 
 /*
 viewheight - at every point of the box it should 
 be 95% of the viewport height
 */
 .header {
-    height: 95vh ;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(126, 213, 111, 0.8),
-        rgba(40, 180, 131, 0.8)),
-        url(../img/hero.jpg);
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0 );
-    position: relative;
-}
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0);
+  position: relative; }
 
 .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
 
 .header__logo {
-    height: 3.5rem;
-}
-
+  height: 3.5rem; }
 
 /*
 to center element
+
 position: absolute;
 top:40%;
 left: 50%;
 are in relation in the main block element
 while transform is only related to the main element itself
 */
-
 .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-
-    /*to center text*/
-    text-align: center;
-
-}
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*to center text*/
+  text-align: center; }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    /*to remove the shaking*/
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-}
-
-
+  color: #fff;
+  text-transform: uppercase;
+  /*to remove the shaking*/
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
 
 /* the name we created @ketframes 
 animation-name: moveInLeft;
@@ -126,144 +98,104 @@ animation-timing-function: ease-out;
 
 */
 .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 800;
-    letter-spacing: 3.5rem;
-    animation:  moveInLeft 3s ease-out;
-}
+  display: block;
+  font-size: 6rem;
+  font-weight: 800;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft 3s ease-out; }
 
 .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-}
-
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem; }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translate(-1rem);
-    }
-
-    80% {
-
-        transform: translate(1rem);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translate(0);
-
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translate(-1rem); }
+  80% {
+    transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInFromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-    
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 /*setting this to relative so child block and make display:absolute */
-
 /*
 shorthand - 
 animation:  moveInLeft 3s ease-out;
 animation-duration: 3s;
 
 */
-
 .btn,
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 10rem;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    position: relative;
-    transition: all .3s;
-    font-size: 1.6rem;
-    font-weight: 800;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10rem;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  position: relative;
+  transition: all .3s;
+  font-size: 1.6rem;
+  font-weight: 800; }
 
 .btn--white {
-    background-color: #fff;
-    color: #777;
-}
+  background-color: #fff;
+  color: #777; }
 
-.btn:hover{
-    /*to go a bit up */
-    transform: translateY(-.3rem);
-    /* args - X and Y Blur color */
-    box-shadow: 0 1rem 2rem rgba(0,0,0, 2); 
-}
+.btn:hover {
+  /*to go a bit up */
+  transform: translateY(-0.3rem);
+  /* args - X and Y Blur color */
+  box-shadow: 0 1rem 2rem black; }
 
 /*when users click*/
 .btn:active {
-    transform: translateY(-.1rem);
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0, 2); 
-}
-
+  transform: translateY(-0.1rem);
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem black; }
 
 /*
 behind the button
 1st it to appear - content:""
 height: 100%; and width - paralumabas
 */
-.btn::after {    
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position:  absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    /*fading effect*/
-    transition: all .3s;
-}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*fading effect*/
+  transition: all .3s; }
 
 .btn--white::after {
-    background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.7);
-
-    /* A fading effect */
-    opacity: 0;
-
-}
+  transform: scaleX(1.4) scaleY(1.7);
+  /* A fading effect */
+  opacity: 0; }
 
 .btn--animated {
-    /* Args =  name - duration - time function - delay*/
-    animation: moveInFromBottom .5s ease-out .75s;
-    
-    /*
+  /* Args =  name - duration - time function - delay*/
+  animation: moveInFromBottom .5s ease-out .75s;
+  /*
     it'll auto apply the style up to 0% b4 D animation starts
     now the style will be applied before the animation starts. simple by using this fill-mode:backwards
     */
-    animation-fill-mode: backwards;
-}
-
-
-
-
-
-
-
-
+  animation-fill-mode: backwards; }
