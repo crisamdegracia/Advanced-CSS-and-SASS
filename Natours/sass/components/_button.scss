@@ -1,0 +1,95 @@
+
+
+/*setting this to relative so child block and make display:absolute */
+
+/*
+shorthand - 
+animation:  moveInLeft 3s ease-out;
+animation-duration: 3s;
+
+*/
+
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 10rem;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        position: relative;
+        transition: all .3s;
+        font-size: 1.6rem;
+        font-weight: 800;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-gray-dark;
+        
+          &::after {
+        background-color: $color-white;
+        }
+    }
+
+    &:hover{
+        /*to go a bit up */
+        transform: translateY(-.3rem);
+        /* args - X and Y Blur color */
+        box-shadow: 0 1rem 2rem rgba($color-black, 2); 
+        
+          &::after {
+            transform: scaleX(1.4) scaleY(1.7);
+
+            /* A fading effect */
+            opacity: 0;
+
+            }
+
+    }
+
+    /*when users click*/
+    &:active {
+        transform: translateY(-.1rem);
+        background-color: #333;
+        color: $color-white;
+        box-shadow: 0 .5rem 1rem rgba($color-black, 2); 
+    }
+
+
+    /*
+    behind the button
+    1st it to appear - content:""
+    height: 100%; and width - paralumabas
+    */
+    &::after {    
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position:  absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        /*fading effect*/
+        transition: all .3s;
+    }
+
+      
+        &--animated {
+            /* Args =  name - duration - time function - delay*/
+            animation: moveInFromBottom .5s ease-out .75s;
+
+            /*
+            it'll auto apply the style up to 0% b4 D animation starts
+            now the style will be applied before the animation starts. simple by using this fill-mode:backwards
+            */
+            animation-fill-mode: backwards;
+            }
+
+
+
+}
+

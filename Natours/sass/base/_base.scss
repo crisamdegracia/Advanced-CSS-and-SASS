@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    /* Global reset while following inheritance */
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+
+html {
+    /*
+    100% is equal to 16px - but we only want it 10px 
+    so the computation 10/16 = .625 * 100%
+    simple but very powerful on media-querries
+    - this will allow user to zoom in page automatically
+    - not only to change the font size but also to zoom in on the page
+    a widely use technique CSS Dev Community
+    but not supported below IE 9
+    */
+    font-size: 62.5%;
+}
+
+/*
+Import! this will be inherited to their child elements
+*/
+body {
+
+    box-sizing: border-box;
+}
+

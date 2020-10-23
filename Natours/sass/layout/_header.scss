@@ -1,0 +1,52 @@
+
+/*
+viewheight - at every point of the box it should 
+be 95% of the viewport height
+*/
+.header {
+    height: 95vh ;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0 );
+    position: relative;
+
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+
+    /*
+    to center element
+
+    position: absolute;
+    top:40%;
+    left: 50%;
+    are in relation in the main block element
+    while transform is only related to the main element itself
+    */
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+
+        /*to center text*/
+        text-align: center;
+
+    }
+}
+
