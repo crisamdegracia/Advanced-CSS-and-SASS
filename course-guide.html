@@ -309,12 +309,22 @@
 
                 <pre>
                     base - basic product definitions
+                         - animation, base, typography
+                             - _base - html, body, * 
+                             - _typography - heading primary
                     components - one file for each component
+                         - button
                     layout - where we define the overall layout of the project
+                         - header
                     pages - where we have styles for specific pages of the project
+                         - home
                     themes - if we want to implement different visual themes
+                        - 
                     abstracts - where we put code that doesn't output any CSS, such as variables or mix-ins
-                    vendor - where all third party css goes
+                        - functions, mixins, variable
+                    
+                    vendor - where all third party css goes 
+                        - bootstrap, bulma, or icon system or animation framework
                 </pre>
             </div>
             <h3>f3v021 Implementing BEM in the Natours Project</h3>
@@ -366,22 +376,22 @@
                   }
                 }
 
-                
+
                 input file sass/main.scss
                 output file css/style.css
-                
-                
+
+
                 </pre>
-                
+
                 <pre>
-                    
+
                     To watch our main.scss file so we dont need to reload everytime
                     "compile:sass": "node-sass sass/main.scss css/style.css -w"
                         -we add (-w) w means watch 
                         - so just by saving ctrl+s - it will auto compile.
                 </pre>
             </div>
-            
+
             <h3> f4v029 The Easiest Way of Automatically Reloading a Page on File Changes </h3>
             <div>
                 <pre>
@@ -389,8 +399,32 @@
                     brackets has this already
                 </pre>
             </div>
-            
+
             <h3>f5v031 Converting Our CSS Code to Sass Variables and Nesting</h3>
+            <div>
+                <pre>
+                   ampersand is the king of nesting :D
+
+                    &__
+
+                </pre>
+            </div>
+
+            <h3>f5v032 Implementing the 7-1 CSS Architecture with Sass</h3>
+            <div>
+                <pre>
+                _base - real low level basics
+                      - resets and style for HTML and body element selectors
+                </pre>
+                
+                <pre>
+                    to import 
+                    
+                    @import "base/base
+                </pre>
+            </div>
+            
+            <h3>f5v034 Building a Custom Grid with Floats</h3>
             <div>
                 <pre>
                     
