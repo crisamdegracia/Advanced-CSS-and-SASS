@@ -1,0 +1,16 @@
+
+/* 
+clearfix - is to append a pseudo element after the element 
+which will then clear these floats
+*/
+@mixin clearfix {
+    &::after {
+        content: "";
+        
+        /*standard version of clearfix is to display:table*/
+        display: table;
+        /* the property that actually perform clearfix  */
+        clear: both;
+    }
+
+}
