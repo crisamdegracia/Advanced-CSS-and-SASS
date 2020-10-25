@@ -19,16 +19,16 @@ animation-duration: 3s;
         display: inline-block;
         position: relative;
         transition: all .3s;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
         font-weight: 800;
     }
 
     &--white {
         background-color: $color-white;
         color: $color-gray-dark;
-        
-          &::after {
-        background-color: $color-white;
+
+        &::after {
+            background-color: $color-white;
         }
     }
 
@@ -37,14 +37,14 @@ animation-duration: 3s;
         transform: translateY(-.3rem);
         /* args - X and Y Blur color */
         box-shadow: 0 1rem 2rem rgba($color-black, 2); 
-        
-          &::after {
+
+        &::after {
             transform: scaleX(1.4) scaleY(1.7);
 
             /* A fading effect */
             opacity: 0;
 
-            }
+        }
 
     }
 
@@ -77,19 +77,46 @@ animation-duration: 3s;
         transition: all .3s;
     }
 
-      
-        &--animated {
-            /* Args =  name - duration - time function - delay*/
-            animation: moveInFromBottom .5s ease-out .75s;
 
-            /*
-            it'll auto apply the style up to 0% b4 D animation starts
-            now the style will be applied before the animation starts. simple by using this fill-mode:backwards
-            */
-            animation-fill-mode: backwards;
-            }
+    &--animated {
+        /* Args =  name - duration - time function - delay*/
+        animation: moveInFromBottom .5s ease-out .75s;
 
+        /*
+        it'll auto apply the style up to 0% b4 D animation starts
+        now the style will be applied before the animation starts. simple by using this fill-mode:backwards
+        */
+        animation-fill-mode: backwards;
+    }
 
+}
 
+.btn-text {
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        font-size:  $default-font-size;
+        transition: all .3s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+        border-radius: 10px;
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+        background-color: $color-black;
+        border-radius: 10px;
+    }
 }
 
