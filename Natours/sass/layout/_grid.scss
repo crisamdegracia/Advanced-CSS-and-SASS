@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width;
-    background-color: $color-grey;
     margin: 0 auto;
 
 
@@ -35,9 +34,12 @@
 
 
     .col-1-of-2 {
-        background-color: orangered;
         /*
         saloob ung calc - ganyan hash{} para gumana ung SASS $ variable
+        
+        to get the each column for 2 
+            - 1st 100% of width minus the gutter
+            - then divide it by 2 columns
         */
         width: calc((100% - #{$gutter-horizontal}) / 2 );
 
@@ -46,32 +48,63 @@
 
     .col-1-of-3 {
         /*
+        3 columns
+        get 100% of width minus 2 gutter divide by 3 columns
+            - 2 gutter becoz. look at the picture
+            - 
         2 * $gutter-horizontal - kasi dalawa na ung gagawan ng margin
+        
+        
         */
         width: calc(( 100% - 2 * #{$gutter-horizontal} ) / 3);
-        background-color: darkgoldenrod;
+       
 
     }
 
     .col-2-of-3 {
         /*
-        2 X the column + gutter - is the total of 2/3
+        twice the size of 1 column in 3 columns
+            - 1st step, get the size of each column for 3 columns 
+                - ( 100% - 2 * #{$gutter-horizontal} ) / 3)
+            - then times it into two
+                - (2 *
+            - then add gutter
+               - + #{$gutter-horizontal})
+      
+        
         */
         width: calc(
             (2 *  ( 100% - 2 * #{$gutter-horizontal} ) / 3)  + #{$gutter-horizontal});
-        background-color: $dark-grey;
+
 
     }
 
     .col-1-of-4 {
+        /*
+        4 columns 
+            - 1st get the 100% of the width
+            - 3 times * gutter
+            - divide now in 4 columns
+        */
+        
         width: calc(( 100% - 3 * #{$gutter-horizontal} ) / 4);
-        background-color: green;
-
+  
     }
     
     .col-2-of-4 {
         /*
+        to get twice of the size of the 4 columns
+            - 1st get the single column size
+                - ( 100% - 3 * #{$gutter-horizontal} )
+            - 2nd divide it by 4
+                - / 4
+            - 3rd multiply it by 2 - becoz its 2 column right?
+                - 2 *
+            - 4th add the gutter
+                - + #{$gutter-horizontal}
+        
         0st get the size of the whole width
+            - then 
         1st get the size of each gutter - or how many gutter
             - thats the total of whole width 
        
@@ -80,18 +113,18 @@
         */
         
         width: calc( 2 * (( 100% - 3 * #{$gutter-horizontal} ) / 4  ) + #{$gutter-horizontal};
-        background-color: greenyellow;
+
 
     }  
     
     .col-3-of-4 {
         /*
-    HOLUSHET - dko na alam hahaha
-        himay himayin mo nalang MDAS
+           Same method just read above comments.
+        
         */
         
         width: calc( ( 3 * (( 100% - 3 * #{$gutter-horizontal} ) / 4 )  + 2 *  #{$gutter-horizontal} );
-        background-color: greenyellow;
+       
 
     }
     
