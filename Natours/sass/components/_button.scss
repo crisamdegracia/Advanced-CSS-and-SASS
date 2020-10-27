@@ -31,6 +31,15 @@ animation-duration: 3s;
             background-color: $color-white;
         }
     }
+    
+    &--success {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
 
     &:hover{
         /*to go a bit up */

@@ -14,3 +14,29 @@ which will then clear these floats
     }
 
 }
+
+@mixin absCenter {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Media Query Manager
+/*
+0-600 - : phone
+600 -900: Tablet Portrait
+900-1200: tablet Landscape
+1080: Big desktop
+1200-1800: is where our styles apply
+
+*/
+
+
+
+// tapos we can use this respon-phone as method block
+// instead of @media, we use @include respond-phone {}
+@mixin respond-phone {
+    @media (max-width:600px){  @content }
+}

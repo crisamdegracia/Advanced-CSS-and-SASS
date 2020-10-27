@@ -3,6 +3,14 @@ clearfix - is to append a pseudo element after the element
 which will then clear these floats
 */
 /*
+0-600 - : phone
+600 -900: Tablet Portrait
+900-1200: tablet Landscape
+1080: Big desktop
+1200-1800: is where our styles apply
+
+*/
+/*
 COLORS:
 
 Follow these CSS code techniques to make our life easier.
@@ -45,6 +53,9 @@ html {
     but not supported below IE 9
     */
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 /*
 Import! this will be inherited to their child elements
@@ -217,6 +228,11 @@ animation-duration: 3s;
     color: #777; }
     .btn--white::after {
       background-color: #fff; }
+  .btn--success {
+    background-color: #7ed56f;
+    color: #fff; }
+    .btn--success::after {
+      background-color: #fff; }
   .btn:hover {
     /*to go a bit up */
     transform: translateY(-0.3rem);
@@ -322,7 +338,7 @@ animation-duration: 3s;
     transform: translateY(-1rem) scale(1.1); }
 
 .card {
-  height: 50rem;
+  height: 52rem;
   /*
     perspective is where the rotation go with a wider size whatever?
     */
@@ -330,9 +346,10 @@ animation-duration: 3s;
   -moz-perspective: 150rem;
   -webkit-perspective: 150rem;
   -o-perspective: 150rem;
-  position: relative; }
+  position: relative;
+  /*Back side Styling*/ }
   .card__side {
-    height: 50rem;
+    height: 55rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -350,6 +367,10 @@ animation-duration: 3s;
       transform: rotatey(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
   .card:hover .card__side--front {
     transform: rotatey(-180deg); }
   .card:hover .card__side--back {
@@ -367,17 +388,56 @@ animation-duration: 3s;
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #55c57a, #28b485), url(/img/nat-7.jpg); }
     .card__picture--3 {
-      background-image: url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(/img/nat-6.jpg); }
   .card__heading {
     font-size: 2.6rem;
     font-weight: 300;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     position: absolute;
-    top: 0;
-    left: 0; }
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1rem 1.5rem; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #fff; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .row {
   max-width: 114rem;

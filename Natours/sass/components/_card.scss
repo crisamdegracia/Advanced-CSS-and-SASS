@@ -1,5 +1,5 @@
 .card {
-    height: 50rem;
+    height: 52rem;
     /*
     perspective is where the rotation go with a wider size whatever?
     */
@@ -10,24 +10,23 @@
     position: relative;
 
     &__side {
-        height: 50rem;
+        height: 55rem;
         transition: all .8s ease;
         position: absolute;
         top:0 ;
         left: 0;
         width: 100%;
         overflow: hidden;
-        
+
         /*hides the back part of an element*/
         backface-visibility: hidden;
 
         border-radius: .5rem;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-    text-align: center;
+        text-align: center;
         &--front {
+//            background-color: $color-white;
             background-color: $color-white;
-
-
         }
         &--back {
 
@@ -36,6 +35,13 @@
             &-1 {
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
             }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+            
         }
     }
 
@@ -47,7 +53,7 @@
     }
 
     &__picture {
-        
+
         background-size: cover;
         height: 23rem;
         /*start top-left 0 0, x direction 0, y direction 100%*/
@@ -57,34 +63,101 @@
         -o-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
         /*eto parang filter */
         background-blend-mode: screen;
-        
-        
-        
+
+
+
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/img/nat-5.jpg);  
         }
 
         &--2 {
-            background-image: url(../img/nat-5.jpg); 
-
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(/img/nat-7.jpg);  
         }
         &--3 {
-            background-image: url(../img/nat-5.jpg); 
-
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(/img/nat-6.jpg);  
         }
     }
-    
-    
+
+
     &__heading {
         font-size: 2.6rem;
         font-weight: 300;
         text-transform: uppercase;
-        color: #000;
+        color: $color-white;
         position: absolute;
-        top: 0;
-        left: 0;
-        
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
     }
+
+    &__heading-span {
+
+        // will add space the span of the element. WHATT?
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+
+
+
+        padding: 1rem 1.5rem;
+
+        &--1{
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85)); 
+        }
+
+        &--2{
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), rgba($color-primary-dark, .85));
+        }
+
+        &--3{
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            li {
+
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-gray-light-2;
+                }
+            }
+        }
+
+
+    }
+
+    /*Back side Styling*/
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+    }
+
+    &__price-box {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: $color-white;
+    }
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
 
 
 }
