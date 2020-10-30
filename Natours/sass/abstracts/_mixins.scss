@@ -40,3 +40,7 @@ which will then clear these floats
 @mixin respond-phone {
     @media (max-width:600px){  @content }
 }
+
+@mixin b {
+    border: 1px solid red;
+}

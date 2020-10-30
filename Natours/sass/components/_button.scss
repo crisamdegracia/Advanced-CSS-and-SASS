@@ -10,6 +10,7 @@ animation-duration: 3s;
 */
 
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -21,6 +22,11 @@ animation-duration: 3s;
         transition: all .3s;
         font-size: $default-font-size;
         font-weight: 800;
+        
+        /*change for the <button>*/
+        border: none;
+        cursor: pointer;
+        outline: none;
     }
 
     &--white {
@@ -37,10 +43,12 @@ animation-duration: 3s;
         color: $color-white;
 
         &::after {
-            background-color: $color-white;
+//            background-color: red;
+            background-color: $color-primary-dark;
         }
     }
-
+    
+    &:focus,
     &:hover{
         /*to go a bit up */
         transform: translateY(-.3rem);
@@ -58,6 +66,7 @@ animation-duration: 3s;
     }
 
     /*when users click*/
+     &:focus,
     &:active {
         transform: translateY(-.1rem);
         background-color: #333;
