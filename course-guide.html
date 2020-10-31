@@ -27,7 +27,6 @@
 
             pre {
                 width: auto;
-                display: inline-block;
                 background-color: #222;
                 font: #ddd;
                 font-family:monospace;
@@ -47,6 +46,50 @@
     <body>
 
         <div id="accordion">
+            <h3>Tricks</h3>
+            <div>
+                <pre>
+                  Semantic means - that we are using tag for the right content.
+              </pre>
+                <pre><code>
+                /*hides the back part of an element*/
+                backface-visibility: hidden;
+
+               // parang photo filter
+                background-blend-mode: screen;
+
+                // to create a gradient BG with image
+                  background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/img/nat-5.jpg);  
+
+
+
+
+                // will add space the span of the element. WHATT?
+                  -webkit-box-decoration-break:clone;
+                box-decoration-break:clone;
+
+                  object-fit: cover;
+
+
+                __input:focus:invalid {
+                 border-bottom: red; 
+                }
+
+                Search for CSS child selector
+                ~ + > 
+
+
+                    __input:placeholder-shown + __label {
+
+                    make sure that the label is on below of the input field
+                    - so we can select it correctly
+
+               </code></pre>
+
+
+
+
+            </div>
             <h3>f2v6 | CSS Universal reset </h3>
             <div>
 
@@ -322,7 +365,7 @@
                         - 
                     abstracts - where we put code that doesn't output any CSS, such as variables or mix-ins
                         - functions, mixins, variable
-                    
+
                     vendor - where all third party css goes 
                         - bootstrap, bulma, or icon system or animation framework
                 </pre>
@@ -416,19 +459,214 @@
                 _base - real low level basics
                       - resets and style for HTML and body element selectors
                 </pre>
-                
+
                 <pre>
                     to import 
-                    
+
                     @import "base/base
                 </pre>
             </div>
-            
+
             <h3>f5v034 Building a Custom Grid with Floats</h3>
             <div>
                 <pre>
-                    
+                   go to /sass/layout/_grids.scss 
                 </pre>
+            </div>
+            <h3>f5035 Building the About Section - Part 1</h3>
+            <div>
+                <pre>
+                we create /base/_utilities
+                    - margin bottom
+                    - text center
+                </pre>
+            </div>
+
+
+            <h3>f5v036 Building the About Section - Part 2</h3>
+            <div>
+                <pre>
+
+                </pre>
+            </div> 
+
+            <h3>f5v037 Building the About Section - Part 3</h3>
+            <div>
+                <pre>
+
+                </pre>
+            </div>
+
+            <h3>f5v038 Building the Features Section</h3>
+            <div>
+                <pre>
+             <code>
+
+            /*selects only the direct children*/
+
+            & > * {
+
+          transform: skewY(7deg);
+            }
+                </code>
+                </pre>
+            </div>
+            <h3>f5v039 Building the Tours Section - Part 1</h3>
+            <div>
+                <pre><code>
+
+
+                </code></pre>
+            </div> 
+
+            <h3>f5v040 Building the Tours Section - Part 2</h3>
+            <div>
+                <h5>CARDS</h5>
+                <pre><code>
+
+                     /*hides the back part of an element*/
+                     backface-visibility: hidden;
+
+
+
+               we create the card tours - with rotate animation
+               we create 2 div - we made it absolute position
+               using backface-visibility: hidden, we hide the back face lement of it
+
+               then rotate it using transform rotateY
+                </code></pre>
+            </div>
+
+            <h3>f5v041 Building the Tours Section - Part 3</h3>
+            <div>
+                <pre>
+                   <code>
+
+                </code>
+                </pre>
+            </div>  
+
+            <h3>f5v042 Building the Stories Section - Part 1</h3>
+            <div>
+                <img src="./images/advanced-css-img-14.jpg" alt="" class="img-size">
+                <pre>
+                   making the text change its starting point of shape
+               </pre>
+                <pre>
+                   <code>
+
+                </code>
+                </pre>
+            </div>
+
+
+            <h3>f5v043 Building the Stories Section - Part 2</h3>
+            <div>
+
+                <h5>object-fit </h5>
+                <pre>
+                   <code>
+            .bg-video {
+                position: absolute;
+                top:0 ;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                opacity: .15;
+
+                &__content {
+                    height: 100%;
+                    width: 100%;
+
+                    object-fit: cover;
+                }
+            }
+
+                </code>
+                </pre>
+            </div>  
+
+            <h3>f5v044 Building the Stories Section - Part 3</h3>
+            <div>
+                <pre>
+
+
+
+                </pre>
+            </div>
+
+
+            <h3>f5v045 Building the Booking Section - Part 1</h3>
+            <div>
+                <h5> making an input on border bottom line like a focus error or correct</h5>
+                <pre>
+         &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        display: block;
+        width: 90%;
+        color: inherit;
+
+        &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, .1);
+        border-bottom: 3px solid $color-primary-dark;
+
+        &:invalid {
+        border-bottom: 3px solid red;
+        }
+            </pre>
+
+            </div>
+
+            <h3>f5v046 Building the Booking Section - Part 2</h3>
+            <div>
+                <pre>
+                __input:placeholder-shown + &__label {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-4rem);
+
+
+           making the text on label animate
+            </pre>
+            </div>
+
+            <h3>f5v047 Building the Booking Section - Part 3</h3>
+            <div>
+                <pre>
+            just go to _form.scss
+            and look for form section on HTML
+           </pre>
+            </div>
+
+            <h3>f5v048 Building the Footer</h3>
+            <div>
+                <pre>
+            just go to _footer.scss
+            and look for form section on HTML
+           </pre>
+            </div>
+
+
+            <h3>f5v049 Building the Navigation - Part 1</h3>
+
+            <div>
+                <pre>
+
+            </pre>
+            </div> <h3>f5v50 Building the Navigation - Part 2</h3>
+
+            <div>
+                <pre>
+
+            </pre>
             </div>
         </div>
 
