@@ -44,3 +44,12 @@ which will then clear these floats
 @mixin b {
     border: 1px solid red;
 }
+
+
+
+@mixins absCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

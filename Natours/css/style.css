@@ -10,6 +10,12 @@ which will then clear these floats
 1200-1800: is where our styles apply
 
 */
+@mixins absCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
 /*
 COLORS:
 
@@ -598,6 +604,68 @@ animation-duration: 3s;
   .story:hover .story__img {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(60%); }
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999; }
+  .popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border: 3px;
+    overflow: hidden;
+    /* To make the same height */
+    display: table; }
+  .popup__left {
+    /* To make the same height */
+    width: 33.333333%;
+    display: table-cell; }
+  .popup__right {
+    /* To make the same height */
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    /* creating 2 columns for text */
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -o-column-count: 2;
+    /*of course the GAP!*/
+    column-gap: 4rem;
+    -webkit-column-gap: 4rem;
+    -moz-column-gap: 4rem;
+    -o-column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    -webkit-column-rule: 1px solid #eee;
+    -moz-column-rule: 1px solid #eee;
+    -o-column-rule: 1px solid #eee;
+    /*
+        para magkaron ng dash don sa dulo - 
+        none = default | 
+        for this to work we need to specify the HTML tag with attirbute
+        lang=en
+        */
+    -webkit-hyphens: auto;
+    -o-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
 
 .row {
   max-width: 114rem;
