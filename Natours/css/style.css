@@ -464,90 +464,35 @@ animation-duration: 3s;
   .feature-box:hover {
     transform: translateY(-1rem) scale(1.1); }
 
-.form {
-  /* Animate the Label once we are in focus */
-  /* adjacent sibling selector + */
-  /*
-    1st - we select the sibling
-    2nd - we use the adjacent sibling selector (+)
-        - becoz the radio input is a direct sibling
-        - but he uses (~) this one. it will work the same way daw
-    
-    1st - as soon we hit the label element
-    2 - the radio button becomes checked
-        - thats why we have a checked pseudo class
-    3 - then we select the sibling of that one
-    4 and then the chilc, becoz that is the one we want to change
-     - each time we want to radio input selected.
-    - so kapag ikiclick na natin mag kakaron na ng radio button active
-    */ }
-  .form__group:not(:last-child) {
-    margin-bottom: 2rem; }
-  .form__input {
-    font-size: 1.5rem;
-    font-family: inherit;
-    padding: 1.5rem 2rem;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    border-bottom: 3px solid transparent;
-    display: block;
-    width: 90%;
-    color: inherit;
-    transition: all 1s; }
-    .form__input:focus {
-      outline: none;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid #28b485; }
-      .form__input:focus:invalid {
-        border-bottom: 3px solid #ff7730; }
-    .form__input::-webkit-input-placeholder {
-      color: #999; }
-  .form__label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-left: 2rem;
-    margin-top: .2rem;
-    display: block;
-    transition: all .2s; }
-  .form__input:placeholder-shown + .form__label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4rem); }
-  .form__radio-group {
-    width: 49%;
-    display: inline-block; }
-  .form__radio-input {
-    display: none; }
-  .form__radio-label {
-    font-size: 1.6rem;
-    cursor: pointer;
-    position: relative;
-    padding-left: 4.5rem; }
-  .form__radio-button {
-    height: 3rem;
-    width: 3rem;
-    border: 5px solid #7ed56f;
-    border-radius: 50%;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: -.4rem; }
-    .form__radio-button::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-      height: 1.3rem;
-      width: 1.3rem;
-      border-radius: 50%;
-      background-color: #7ed56f;
-      opacity: 0;
-      transition: opacity .4s; }
-  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
-    opacity: 1; }
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  display: block;
+  width: 90%;
+  color: inherit; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #28b485; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.2rem;
+  display: block; }
 
 .story {
   width: 75%;
@@ -612,7 +557,10 @@ animation-duration: 3s;
   right: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999; }
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -623,12 +571,17 @@ animation-duration: 3s;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border: 3px;
     overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.4s .3s;
     /* To make the same height */
     display: table; }
   .popup__left {
     /* To make the same height */
     width: 33.333333%;
-    display: table-cell; }
+    display: table-cell;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
   .popup__right {
     /* To make the same height */
     width: 66.666667%;
@@ -641,12 +594,12 @@ animation-duration: 3s;
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
-    /* creating 2 columns for text */
+    /*creating2columnsfortext*/
     column-count: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     -o-column-count: 2;
-    /*of course the GAP!*/
+    /*ofcoursetheGAP!*/
     column-gap: 4rem;
     -webkit-column-gap: 4rem;
     -moz-column-gap: 4rem;
@@ -655,17 +608,26 @@ animation-duration: 3s;
     -webkit-column-rule: 1px solid #eee;
     -moz-column-rule: 1px solid #eee;
     -o-column-rule: 1px solid #eee;
-    /*
-        para magkaron ng dash don sa dulo - 
-        none = default | 
-        for this to work we need to specify the HTML tag with attirbute
-        lang=en
-        */
     -webkit-hyphens: auto;
-    -o-hyphens: auto;
-    -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #eee;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    line-height: 1; }
+  .popup__close:hover {
+    color: #7ed56f; }
 
 .row {
   max-width: 114rem;
