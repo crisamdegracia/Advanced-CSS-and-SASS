@@ -1,0 +1,18 @@
+/* 
+clearfix - is to append a pseudo element after the element 
+which will then clear these floats
+*/
+/*
+0-600 - : phone
+600 -900: Tablet Portrait
+900-1200: tablet Landscape
+1080: Big desktop
+1200-1800: is where our styles apply
+
+*/
+@mixins absCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
