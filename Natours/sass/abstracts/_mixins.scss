@@ -37,9 +37,7 @@ which will then clear these floats
 
 // tapos we can use this respon-phone as method block
 // instead of @media, we use @include respond-phone {}
-@mixin respond-phone {
-    @media (max-width:600px){  @content }
-}
+
 
 @mixin b {
     border: 1px solid red;
@@ -52,4 +50,53 @@ which will then clear these floats
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+
+/* MEDIA QUERY Manager
+1200 - 1800 -  is our normal style apply
+
+0-600px - Phone
+600-900px - Tablet Portrait
+1800+ - Big Desktop
+
+*/
+
+
+
+/* $breakpoint arguement choices:
+- phone 
+- tab-port
+- tab-landscape
+- big-desktop
+
+min-width - 1800 - if its less than 1800px style wud not apply
+
+We use ems not rems. because it is the best practice
+from best web developers
+
+1ems = 16px;
+600/16 = 37.5em
+900/16 = 56.25em
+1200/16 = 75em
+1800/16 = 112.5em
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+@mixin respond ($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){@content}
+    } 
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em ){@content}
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em){@content}
+    }
+    @if $breakpoint == big-desktop {
+
+        @media (min-width: 112.5em){@content}
+    }
+    
 }

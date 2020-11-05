@@ -16,6 +16,33 @@ which will then clear these floats
   top: 50%;
   transform: translate(-50%, -50%); }
 
+/* MEDIA QUERY Manager
+1200 - 1800 -  is our normal style apply
+
+0-600px - Phone
+600-900px - Tablet Portrait
+1800+ - Big Desktop
+
+*/
+/* $breakpoint arguement choices:
+- phone 
+- tab-port
+- tab-landscape
+- big-desktop
+
+min-width - 1800 - if its less than 1800px style wud not apply
+
+We use ems not rems. because it is the best practice
+from best web developers
+
+1ems = 16px;
+600/16 = 37.5em
+900/16 = 56.25em
+1200/16 = 75em
+1800/16 = 112.5em
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
 /*
 COLORS:
 
@@ -57,17 +84,31 @@ html {
     - not only to change the font size but also to zoom in on the page
     a widely use technique CSS Dev Community
     but not supported below IE 9
+
+    Always put the bigger media querries before the smaller
+        - if the is only complicated
     */
   font-size: 62.5%; }
-  @media (max-width: 600px) {
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 /*
 Import! this will be inherited to their child elements
 */
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      background-color: red;
+      padding: 0 !important; } }
 
 /*
 Import! this will be inherited to their child elements
@@ -77,8 +118,7 @@ body {
   font-weight: 400;
   /*    font-size: 16px ;*/
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -106,7 +146,7 @@ body {
     */ }
   .heading-primary--main {
     display: block;
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 800;
     letter-spacing: 3.5rem;
     animation: moveInLeft 3s ease-out; }
@@ -315,6 +355,7 @@ animation-duration: 3s;
     /*making the video like a background cover */
     object-fit: cover; }
 
+/* IMAGES */
 .composition {
   position: relative; }
   .composition__photo {
