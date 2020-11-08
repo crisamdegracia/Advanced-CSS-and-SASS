@@ -10,12 +10,6 @@ which will then clear these floats
 1200-1800: is where our styles apply
 
 */
-@mixins absCenter {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-
 /* MEDIA QUERY Manager
 1200 - 1800 -  is our normal style apply
 
@@ -107,8 +101,7 @@ body {
   padding: 3rem; }
   @media (max-width: 56.25em) {
     body {
-      background-color: red;
-      padding: 0 !important; } }
+      padding: 0; } }
 
 /*
 Import! this will be inherited to their child elements
@@ -126,7 +119,7 @@ body {
   /*to remove the shaking*/
   backface-visibility: hidden;
   margin-bottom: 6rem;
-  /* the name we created @ketframes 
+  /* the name we created @keyframes 
     animation-name: moveInLeft;
 
     for the animation to start 
@@ -150,24 +143,39 @@ body {
     font-weight: 800;
     letter-spacing: 3.5rem;
     animation: moveInLeft 3s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 4rem;
+        font-weight: 700; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.74rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem;
+        font-size: 1.4rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
-  transition: all .2s;
+  transition: all 0.2s;
   /*so it will not fill the whole width size for using gradient BG*/
   display: inline-block;
   /* these 3 below to make the heading gradient*/
   background-image: linear-gradient(to right, #55c57a, #28b485);
   -webkit-background-clip: text;
   color: transparent; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2; } }
   .heading-secondary:hover {
     transform: scale(1.1);
     text-shadow: 1rem 2rem 0.1rem rgba(0, 0, 0, 0.1); }
@@ -187,12 +195,21 @@ body {
 
 .mb-8 {
   margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .mb-8 {
+      margin-bottom: 6; } }
 
 .mb-6 {
   margin-bottom: 6rem !important; }
+  @media (max-width: 56.25em) {
+    .mb-6 {
+      margin-bottom: 4 !important; } }
 
 .mb-4 {
   margin-bottom: 4rem !important; }
+  @media (max-width: 56.25em) {
+    .mb-4 {
+      margin-bottom: 3 !important; } }
 
 .mb-2 {
   margin-bottom: 2rem !important; }
@@ -366,15 +383,35 @@ animation-duration: 3s;
     transition: all .2s;
     /* the off space of the outline border*/
     outline-offset: 1rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.33333333%;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.3); } }
     .composition__photo--p2 {
       right: 0rem;
       top: 2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -1rem;
+          transform: scale(1.3);
+          z-index: 100; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          top: 1rem;
+          left: 0;
+          transform: scale(1.1); } }
     .composition__photo:hover {
       /* the border when hover*/
       outline: 1rem outset #7ed56f;
@@ -433,11 +470,11 @@ animation-duration: 3s;
     /*eto parang filter */
     background-blend-mode: screen; }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/Natours/img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #55c57a, #28b485), url(/img/nat-7.jpg); }
+      background-image: linear-gradient(to right bottom, #55c57a, #28b485), url(/Natours/img/nat-7.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(/img/nat-6.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(/Natours/img/nat-8.jpg); }
   .card__heading {
     font-size: 2.6rem;
     font-weight: 300;
@@ -494,6 +531,9 @@ animation-duration: 3s;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 2rem; } }
   .feature-box__icon {
     font-size: 5rem;
     margin-bottom: .5rem;
@@ -502,6 +542,9 @@ animation-duration: 3s;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent; }
+    @media (max-width: 56.25em) {
+      .feature-box__icon {
+        margin-bottom: 0; } }
   .feature-box:hover {
     transform: translateY(-1rem) scale(1.1); }
 
@@ -707,6 +750,13 @@ animation-duration: 3s;
     */ }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     /*standard version of clearfix is to display:table*/
@@ -718,6 +768,13 @@ animation-duration: 3s;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     /*
         saloob ung calc - ganyan hash{} para gumana ung SASS $ variable
@@ -737,7 +794,7 @@ animation-duration: 3s;
 
 
         */
-    width: calc(( 100% - 2 * 6rem ) / 3); }
+    width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
     /*
         twice the size of 1 column in 3 columns
@@ -750,7 +807,7 @@ animation-duration: 3s;
 
 
         */
-    width: calc( (2 *  ( 100% - 2 * 6rem ) / 3)  + 6rem); }
+    width: calc( (2 * (100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     /*
         4 columns 
@@ -758,15 +815,15 @@ animation-duration: 3s;
         - 3 times * gutter
         - divide now in 4 columns
         */
-    width: calc(( 100% - 3 * 6rem ) / 4); }
+    width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc( 2 * (( 100% - 3 * 6rem ) / 4  ) + 6rem); }
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
     /*
         Same method just read above comments.
 
         */
-    width: calc( ( 3 * (( 100% - 3 * 6rem ) / 4 )  + 2 *  6rem )); }
+    width: calc( (3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)); }
 
 /*
 viewheight - at every point of the box it should 
@@ -777,7 +834,8 @@ be 95% of the viewport height
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
-  clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   position: relative;
   /*
     to center element
@@ -788,6 +846,10 @@ be 95% of the viewport height
     are in relation in the main block element
     while transform is only related to the main element itself
     */ }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -807,19 +869,30 @@ be 95% of the viewport height
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 15rem;
     height: auto;
     margin-bottom: 6rem;
-    transition: all .3s; }
+    transition: all 0.3s; }
     .footer__logo:hover {
       transform: scale(1.2); }
   .footer__navigation {
     border-top: 1px solid #eee;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -840,6 +913,10 @@ be 95% of the viewport height
     display: inline-block;
     width: 80%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        float: none; } }
 
 .navigation {
   /* this is where we can click the navigation circle */
@@ -859,6 +936,12 @@ be 95% of the viewport height
     z-index: 100;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     /* this will make the navigation pop out */ }
+    @media (max-width: 56.25em) {
+      .navigation__background {
+        top: 2.5rem;
+        right: 2.5rem;
+        height: 4rem;
+        width: 4rem; } }
   .navigation__button {
     background-color: #fff;
     height: 7rem;
@@ -870,6 +953,12 @@ be 95% of the viewport height
     z-index: 2000;
     text-align: center;
     cursor: pointer; }
+    @media (max-width: 56.25em) {
+      .navigation__button {
+        height: 5rem;
+        width: 5rem;
+        top: 2rem;
+        right: 2rem; } }
   .navigation__nav {
     height: 100vh;
     position: fixed;
@@ -902,7 +991,7 @@ be 95% of the viewport height
     background-image: linear-gradient(120deg, #eee 0%, transparent 50%, #fff 50%);
     background-size: 230%;
     border-radius: 3px;
-    transition: all .4s;
+    transition: all 0.4s;
     box-shadow: 0 3px 3px #000; }
   .navigation__link:hover, .navigation__link:active {
     background-position: 100%;
@@ -916,20 +1005,33 @@ be 95% of the viewport height
   .navigation__icon {
     position: relative;
     margin-top: 3.5rem; }
+    @media (max-width: 56.25em) {
+      .navigation__icon {
+        margin-top: 2.5rem; } }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
       width: 3rem;
       height: 2px;
       background-color: #333;
       display: inline-block; }
+      @media (max-width: 56.25em) {
+        .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+          width: 2rem;
+          height: 1px; } }
     .navigation__icon::before, .navigation__icon::after {
       content: "";
       position: absolute;
       left: 0;
-      transition: all .2s; }
+      transition: all 0.2s; }
     .navigation__icon::before {
-      top: -.8rem; }
+      top: -0.8rem; }
+      @media (max-width: 56.25em) {
+        .navigation__icon::before {
+          top: -0.5rem; } }
     .navigation__icon::after {
-      top: .8rem; }
+      top: 0.8rem; }
+      @media (max-width: 56.25em) {
+        .navigation__icon::after {
+          top: 0.5rem; } }
   .navigation__button:hover .navigation__icon::before {
     top: -1rem; }
   .navigation__button:hover .navigation__icon::after {
@@ -947,6 +1049,10 @@ be 95% of the viewport height
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 20rem 0;
+      margin-top: -25vh; } }
 
 .section-features {
   padding: 20rem 0;
@@ -957,19 +1063,31 @@ be 95% of the viewport height
   /*selects only the direct children*/ }
   .section-features > * {
     transform: skewY(7deg); }
+  @media (max-width: 56.25em) {
+    .section-features {
+      padding: 10rem 0; } }
 
 .section-tours {
   background-color: #f7f7f7;
   padding: 25rem 0 20rem 0;
   margin-top: -10rem; }
+  @media (max-width: 56.25em) {
+    .section-tours {
+      padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   padding: 15rem 0;
   position: relative; }
+  @media (max-width: 56.25em) {
+    .section-stories {
+      padding: 10rem 0; } }
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+  @media (max-width: 56.25em) {
+    .section-book {
+      padding: 10rem 0; } }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);

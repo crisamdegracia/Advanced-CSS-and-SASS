@@ -18,7 +18,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        }
+      }
       html {
         /*                font-size: 62.5%;*/
       }
@@ -53,8 +53,8 @@
       }
 
       .img-size:hover {
-          transition: all .3s;
-          transform: scale(2.4);
+        transition: all 0.3s;
+        transform: scale(2.4);
       }
 
       .container {
@@ -164,6 +164,8 @@
                         }
 
 
+
+
                        //in some situation
                         &__left {
                         width: 33.333333% ;
@@ -196,8 +198,6 @@
       <h3>f2v6 | CSS Universal reset</h3>
       <div>
         <pre>
-
-
 
 
                    * {
@@ -473,8 +473,8 @@
                         font-size: 62.5%;
                     }
 
-                </pre
-        >
+<!-- <<<<<<< HEAD -->
+                </pre>
       </div>
       <h3>f3v19 - 019 How CSS Renders a Website The Visual Formatting Model</h3>
 
@@ -485,16 +485,168 @@
         <img class="img-size" src="./images/advanced-css-img-8.jpg" alt="" />
       </div>
 
+      <!-- ======= -->
+      <!-- <<<<<<< HEAD -->
       <h3>f3020 CSS Architecture Components and BEM</h3>
       <div>
+        <pre></pre>
+      </div>
+
+      <h3>
+        f3v19 VERY IMPORTANT How CSS Renders a Website The Visual Formatting
+        Model
+      </h3>
+      <div>
+        <h5>Box Model</h5>
+        <img
+          width="600px"
+          src="../Advanced-CSS-and-SASS/images/advanced-css-img-6.png"
+          alt=""
+        />
         <pre>
-                        BEM - Block Element Modifier
-                    </pre
-        >
-        <img class="img-size" src="./images/advanced-css-img-9.jpg" alt="" />
-        <img class="img-size" src="./images/advanced-css-img-10.jpg" alt="" />
+                    display:block - occupy all the width - 
+                    display:inline - occupy only what content only needs
+                                    - Hieght and width do not apply 
+                                    - which means we cannot use this property here
+                                    - and can only specify horizontal padding
+                                    - and margin on inline elements 
+                                    - this how box model works on inline elements
+                                    - to overcome the limitation we need to use 
+                    display:inline-block - uses content space and no line breaks
+                                    - technically inline box
+                                    - since it works as block-level box on the inside
+                                    - the box model applies to them just like in the
+                                    regular block-level boxes
+                                    - so we need to do to set an element to an inline box is to display property to inline block
+<!-- ======= -->
+<!-- >>>>>>> acb1efc0922ac9c1a18e1b4a084d81a1c144e099 -->
+                </pre>
+        <img
+          src="../Advanced-CSS-and-SASS/images/advanced-css-img7.png"
+          width="600px"
+          alt=""
+        />
 
         <pre>
+                    normal flow - is when we dont use position absolute on it
+                        - if we use postion relative then the position is still normal flow
+                        -normal flow means, is that the elements are simply laid out on the page in a natural order in the code
+
+                    floats - the float property causes an element to be completely         taken out the normal flow and shifted to left and             right - until it touches the edge of its containing           box or another floated element
+                        -  text and inline elements will wrap arount the floated element 
+                        - also when an element is floated, its container will not
+                        - adjust its height to the element / which is problem
+                        - solution is clearfix
+                    absolut postioning - can overlap container can solve it by stacking context - z-index
+
+                            - use top:0 left:0 to contain on container
+                </pre
+        >
+      </div>
+      <h3>f3020 CSS Architecture Components and BEM</h3>
+      <div>
+        we cannot dive into the project without proper plan - google atomic
+        design
+        <img
+          width="600px"
+          src="../Advanced-CSS-and-SASS/images/advanced-css-img9.png"
+          alt=""
+        />
+        <pre>
+
+                BEM - Block Element Modifier
+                </pre
+        >
+        <img
+          width="600px"
+          src="../Advanced-CSS-and-SASS/images/adv-css11.png"
+          alt=""
+        />
+        <h5>The 7 Folders</h5>
+        <ul>
+          <li>base- basic product definitions</li>
+          <li>components - where we have 1 file for each component</li>
+          <li>layout - where we define the overall of the project</li>
+          <li>
+            pages - where we have styles, for the specific pages of the project
+          </li>
+          <li>Themes - if we want to implement different visual themes</li>
+          <li>
+            abstracts - where we put code that doesnt output any css such as
+            variable or mix-ins
+          </li>
+          <li>vendors - where all CSS party goes</li>
+        </ul>
+        <img width="600px" src="images/adv-css-img12.png" alt="" />
+      </div>
+      <h3>f3v021 Implementing BEM in the Natours Project</h3>
+      <div>
+        <ul>
+          <li>
+            <pre>
+                        block - example  HEADER
+                        element - logo-box - text-box
+                        modifier - heading-primary--sub - sub is the modifier   
+
+                        </pre
+            >
+          </li>
+        </ul>
+      </div>
+      <h3>f4v023 - introduction to SASS</h3>
+      <div>
+        <img
+          width="600px"
+          src="../Advanced-CSS-and-SASS/images/Adv-css-13.png"
+          alt=""
+        />
+      </div>
+
+      <h3>f4v024 First Steps with Sass Variables and Nesting</h3>
+      <div>
+        <pre>
+                    clearfix - use it when - using floats - 
+                            - .clearfix::after {
+                                content:"";
+                                clear: both;
+                                display:table;
+                            }
+                </pre
+        >
+      </div>
+
+      <h3>f4v025 First Steps with Sass Mixins Extends and Functions</h3>
+      <div>
+        <pre>
+                &   
+                @mixin
+                @include
+                darken(variablecolo, opacity)
+                %
+                extend
+               </pre
+        >
+      </div>
+      <h3>f4v026 A Brief Introduction to the Command Line</h3>
+      <div>
+        <!-- ======= -->
+        <div>
+          <pre></pre>
+          <img class="img-size" src="./images/advance-css-img6.jpg" alt="" />
+          <img class="img-size" src="./images/advanced-css-img-7.jpg" alt="" />
+          <img class="img-size" src="./images/advanced-css-img-8.jpg" alt="" />
+        </div>
+
+        <h3>f3020 CSS Architecture Components and BEM</h3>
+        <div>
+          <pre>
+<!-- >>>>>>> 17f98421512592638f08c3cfa3dc601e310c1b87 -->
+                        BEM - Block Element Modifier
+                    </pre>
+          <img class="img-size" src="./images/advanced-css-img-9.jpg" alt="" />
+          <img class="img-size" src="./images/advanced-css-img-10.jpg" alt="" />
+
+          <pre>
                     base - basic product definitions
                          - animation, base, typography
                              - _base - html, body, * 
@@ -513,44 +665,44 @@
                     vendor - where all third party css goes 
                         - bootstrap, bulma, or icon system or animation framework
                 </pre
-        >
-      </div>
-      <h3>f3v021 Implementing BEM in the Natours Project</h3>
-      <div>
-        <pre></pre>
-        <img class="img-size" src="./images/advanced-css-img-11.jpg" alt="" />
-      </div>
-      <h3>f4v023 What is Sass</h3>
-      <div>
-        <img class="img-size" src="./images/advanced-css-img-12.jpg" alt="" />
-        <img class="img-size" src="./images/advanced-css-img-13.jpg" alt="" />
-        <pre>
+          >
+        </div>
+        <h3>f3v021 Implementing BEM in the Natours Project</h3>
+        <div>
+          <pre></pre>
+          <img class="img-size" src="./images/advanced-css-img-11.jpg" alt="" />
+        </div>
+        <h3>f4v023 What is Sass</h3>
+        <div>
+          <img class="img-size" src="./images/advanced-css-img-12.jpg" alt="" />
+          <img class="img-size" src="./images/advanced-css-img-13.jpg" alt="" />
+          <pre>
  Sass Syntax - rely on indentation and has no bracketing, confusing. </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f4v024 First Steps with Sass Variables and Nesting</h3>
-      <div>
-        <pre>
+        <h3>f4v024 First Steps with Sass Variables and Nesting</h3>
+        <div>
+          <pre>
                     Codepen - I dont like it.
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f4v027 NPM Packages Lets Install Sass Locally</h3>
-      <div>
-        <pre>
+        <h3>f4v027 NPM Packages Lets Install Sass Locally</h3>
+        <div>
+          <pre>
                     npm init 
 
                     npm install node-sass --save-dev
 
                     npm uninstall node-sass --save-dev
                 </pre
-        >
-      </div>
-      <h3>f4v028 NPM Scripts Lets Write and Compile Sass Locally</h3>
-      <div>
-        <pre>
+          >
+        </div>
+        <h3>f4v028 NPM Scripts Lets Write and Compile Sass Locally</h3>
+        <div>
+          <pre>
                                 {
                   "name": "natours",
                   "version": "1.0.0",
@@ -572,86 +724,87 @@
 
 
                 </pre
-        >
+          >
 
-        <pre>
+          <pre>
 
                     To watch our main.scss file so we dont need to reload everytime
                     "compile:sass": "node-sass sass/main.scss css/style.css -w"
                         -we add (-w) w means watch 
                         - so just by saving ctrl+s - it will auto compile.
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>
-        f4v029 The Easiest Way of Automatically Reloading a Page on File Changes
-      </h3>
-      <div>
-        <pre>
+        <h3>
+          f4v029 The Easiest Way of Automatically Reloading a Page on File
+          Changes
+        </h3>
+        <div>
+          <pre>
                     npm live server
                     brackets has this already
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v031 Converting Our CSS Code to Sass Variables and Nesting</h3>
-      <div>
-        <pre>
+        <h3>f5v031 Converting Our CSS Code to Sass Variables and Nesting</h3>
+        <div>
+          <pre>
                    ampersand is the king of nesting :D
 
                     &__
 
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v032 Implementing the 7-1 CSS Architecture with Sass</h3>
-      <div>
-        <pre>
+        <h3>f5v032 Implementing the 7-1 CSS Architecture with Sass</h3>
+        <div>
+          <pre>
                 _base - real low level basics
                       - resets and style for HTML and body element selectors
                 </pre
-        >
+          >
 
-        <pre>
+          <pre>
                     to import 
 
                     @import "base/base
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v034 Building a Custom Grid with Floats</h3>
-      <div>
-        <pre>
+        <h3>f5v034 Building a Custom Grid with Floats</h3>
+        <div>
+          <pre>
                    go to /sass/layout/_grids.scss 
                 </pre
-        >
-      </div>
-      <h3>f5035 Building the About Section - Part 1</h3>
-      <div>
-        <pre>
+          >
+        </div>
+        <h3>f5035 Building the About Section - Part 1</h3>
+        <div>
+          <pre>
                 we create /base/_utilities
                     - margin bottom
                     - text center
                 </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v036 Building the About Section - Part 2</h3>
-      <div>
-        <pre></pre>
-      </div>
+        <h3>f5v036 Building the About Section - Part 2</h3>
+        <div>
+          <pre></pre>
+        </div>
 
-      <h3>f5v037 Building the About Section - Part 3</h3>
-      <div>
-        <pre></pre>
-      </div>
+        <h3>f5v037 Building the About Section - Part 3</h3>
+        <div>
+          <pre></pre>
+        </div>
 
-      <h3>f5v038 Building the Features Section</h3>
-      <div>
-        <pre>
+        <h3>f5v038 Building the Features Section</h3>
+        <div>
+          <pre>
              <code>
 
             /*selects only the direct children*/
@@ -662,19 +815,19 @@
             }
                 </code>
                 </pre>
-      </div>
-      <h3>f5v039 Building the Tours Section - Part 1</h3>
-      <div>
-        <pre><code>
+        </div>
+        <h3>f5v039 Building the Tours Section - Part 1</h3>
+        <div>
+          <pre><code>
 
 
                 </code></pre>
-      </div>
+        </div>
 
-      <h3>f5v040 Building the Tours Section - Part 2</h3>
-      <div>
-        <h5>CARDS</h5>
-        <pre><code>
+        <h3>f5v040 Building the Tours Section - Part 2</h3>
+        <div>
+          <h5>CARDS</h5>
+          <pre><code>
 
                      /*hides the back part of an element*/
                      backface-visibility: hidden;
@@ -687,35 +840,35 @@
 
                then rotate it using transform rotateY
                 </code></pre>
-      </div>
+        </div>
 
-      <h3>f5v041 Building the Tours Section - Part 3</h3>
-      <div>
-        <pre>
+        <h3>f5v041 Building the Tours Section - Part 3</h3>
+        <div>
+          <pre>
                    <code>
 
                 </code>
                 </pre>
-      </div>
+        </div>
 
-      <h3>f5v042 Building the Stories Section - Part 1</h3>
-      <div>
-        <img src="./images/advanced-css-img-14.jpg" alt="" class="img-size" />
-        <pre>
+        <h3>f5v042 Building the Stories Section - Part 1</h3>
+        <div>
+          <img src="./images/advanced-css-img-14.jpg" alt="" class="img-size" />
+          <pre>
                    making the text change its starting point of shape
                </pre
-        >
-        <pre>
+          >
+          <pre>
                    <code>
 
                 </code>
                 </pre>
-      </div>
+        </div>
 
-      <h3>f5v043 Building the Stories Section - Part 2</h3>
-      <div>
-        <h5>object-fit</h5>
-        <pre>
+        <h3>f5v043 Building the Stories Section - Part 2</h3>
+        <div>
+          <h5>object-fit</h5>
+          <pre>
                    <code>
             .bg-video {
                 position: absolute;
@@ -736,19 +889,19 @@
 
                 </code>
                 </pre>
-      </div>
+        </div>
 
-      <h3>f5v044 Building the Stories Section - Part 3</h3>
-      <div>
-        <pre></pre>
-      </div>
+        <h3>f5v044 Building the Stories Section - Part 3</h3>
+        <div>
+          <pre></pre>
+        </div>
 
-      <h3>f5v045 Building the Booking Section - Part 1</h3>
-      <div>
-        <h5>
-          making an input on border bottom line like a focus error or correct
-        </h5>
-        <pre>
+        <h3>f5v045 Building the Booking Section - Part 1</h3>
+        <div>
+          <h5>
+            making an input on border bottom line like a focus error or correct
+          </h5>
+          <pre>
          &__input {
         font-size: 1.5rem;
         font-family: inherit;
@@ -770,12 +923,12 @@
         border-bottom: 3px solid red;
         }
             </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v046 Building the Booking Section - Part 2</h3>
-      <div>
-        <pre>
+        <h3>f5v046 Building the Booking Section - Part 2</h3>
+        <div>
+          <pre>
                 __input:placeholder-shown + &__label {
                 opacity: 0;
                 visibility: hidden;
@@ -784,52 +937,73 @@
 
            making the text on label animate
             </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v047 Building the Booking Section - Part 3</h3>
-      <div>
-        <pre>
+        <h3>f5v047 Building the Booking Section - Part 3</h3>
+        <div>
+          <pre>
             just go to _form.scss
             and look for form section on HTML
            </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v048 Building the Footer</h3>
-      <div>
-        <pre>
+        <h3>f5v048 Building the Footer</h3>
+        <div>
+          <pre>
             just go to _footer.scss
             and look for form section on HTML
            </pre
-        >
-      </div>
+          >
+        </div>
 
-      <h3>f5v049 Building the Navigation - Part 1</h3>
+        <h3>f5v049 Building the Navigation - Part 1</h3>
 
-      <div>
-        <pre></pre>
-      </div>
+        <div>
+          <pre></pre>
+        </div>
 
-      <h3>f5v50 Building the Navigation - Part 2</h3>
+        <h3>f5v50 Building the Navigation - Part 2</h3>
 
-      <div>
-        <pre></pre>
-      </div>
+        <div>
+          <pre></pre>
+        </div>
 
-      <h3>f5v051 Building the Navigation - Part 3</h3>
+        <h3>f5v051 Building the Navigation - Part 3</h3>
 
-      <div>
-        <pre></pre>
-      </div>
+        <!-- <<<<<<< HEAD -->
+        <div>
+          <pre></pre>
+        </div>
+        <!-- ======= -->
+
+        <!-- >>>>>>> acb1efc0922ac9c1a18e1b4a084d81a1c144e099 -->
+
+        <h3>
+          f6v058 Writing Media Queries - Layout About and Features Sections
+        </h3>
+
+        <div>
+          <pre></pre>
+        </div>
+        <h3>
+          f6v059 Writing Media Queries - Tours Stories and Booking Sections
+        </h3>
+
+        <div>
+          <pre></pre>
+        </div>
+     
+      <!-- >>>>>>> acb1efc0922ac9c1a18e1b4a084d81a1c144e099
+>>>>>>> 17f98421512592638f08c3cfa3dc601e310c1b87 -->
 
       <h3>f5v052 Building a Pure CSS Popup - Part 1.</h3>
 
       <div>
         <pre>
             go to the  _popup.scss
-            </pre
-        >
+            </pre>
       </div>
 
       <h3>f5v053 Building a Pure CSS Popup - Part 2</h3>
@@ -862,8 +1036,7 @@
             }
         
 
-            </pre
-        >
+            </pre>
       </div>
 
       <h3>f6v055 Mobile-First vs Desktop-First and Breakpoints</h3>
@@ -875,21 +1048,24 @@
               alt=""
               class="img-size"
             />
-            <img src="./images/advanced-css-img-16.jpg" alt="" class="img-size">
+            <img
+              src="./images/advanced-css-img-16.jpg"
+              alt=""
+              class="img-size"
+            />
             <pre></pre>
           </div>
         </div>
       </div>
-    <h3>f6v056 Lets Use the Power of Sass Mixins to Write Media Queries</h3>
+      <h3>f6v056 Lets Use the Power of Sass Mixins to Write Media Queries</h3>
       <div class="row">
-          <h5>Mixins and media querries</h5>
-          <div class="container">
-              <pre>
-
-              </pre>
-          </div>
+        <h5>Mixins and media querries</h5>
+        <div class="container">
+          <pre></pre>
+        </div>
       </div>
-    
+
+      
     </div>
   </body>
   <script src="jquery-ui-1.12.1/jquery-ui.js"></script>

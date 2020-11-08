@@ -2,27 +2,22 @@
 Import! this will be inherited to their child elements
 */
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /*    font-size: 16px ;*/
-    line-height: 1.7;
-    color: $color-gray-dark;
-   
-
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*    font-size: 16px ;*/
+  line-height: 1.7;
+  color: $color-gray-dark;
 }
 
-
 .heading-primary {
-    color: $color-white;
-    text-transform: uppercase;
+  color: $color-white;
+  text-transform: uppercase;
 
-    /*to remove the shaking*/
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
+  /*to remove the shaking*/
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
 
-
-
-    /* the name we created @ketframes 
+  /* the name we created @keyframes 
     animation-name: moveInLeft;
 
     for the animation to start 
@@ -40,60 +35,73 @@ body {
     animation-timing-function: ease-out;
 
     */
-    &--main {
-        display: block;
-        font-size: 5rem;
-        font-weight: 800;
-        letter-spacing: 3.5rem;
-        animation:  moveInLeft 3s ease-out;
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 3s ease-out;
 
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 4rem;
+      font-weight: 700;
     }
+  }
 
-    &--sub {
-        display: block;
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 1.74rem;
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 1.4rem;
     }
-
-
+  }
 }
 
-
 .heading-secondary {
-    
-    
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    transition: all .2s;
-    /*so it will not fill the whole width size for using gradient BG*/
-    display: inline-block;
-    /* these 3 below to make the heading gradient*/
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-    -webkit-background-clip: text;
-    color: transparent;
-    
-    &:hover {
-    transform:scale(1.1);
-    text-shadow: 1rem 2rem .1rem rgba($color-black, .1);
-    }
-    
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  /*so it will not fill the whole width size for using gradient BG*/
+  display: inline-block;
+  /* these 3 below to make the heading gradient*/
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+  @include respond(phone) {
+    font-size: 2;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 1rem 2rem 0.1rem rgba($color-black, 0.1);
+  }
 }
 
 .heading-tertiary {
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .paragraph {
-    font-size: 1.6rem;
-    
-    &:not(:last-child){
-        margin-bottom: 3rem;
-    }
-}
+  font-size: 1.6rem;
 
- 
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

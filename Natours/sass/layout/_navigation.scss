@@ -1,175 +1,193 @@
 .navigation {
+  &__checkbox {
+    display: none;
+  }
 
-    &__checkbox {
-        display: none;
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+
+    /*start lighter color*/
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    z-index: 100;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    /* this will make the navigation pop out */
+    //        transform: scale(80);
+
+    @include respond(tab-port) {
+      top: 2.5rem;
+      right: 2.5rem;
+
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    text-align: center;
+    //        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      height: 5rem;
+      width: 5rem;
+
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+
+    /*removing navigation*/
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1.3rem;
+    backface-visibility: hidden;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+
+      background-image: linear-gradient(
+        120deg,
+        #eee 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 230%;
+      border-radius: 3px;
+      transition: all 0.4s;
+      box-shadow: 0 3px 3px #000;
     }
 
-    &__background {
-        height: 6rem;
-        width: 6rem ;
-        border-radius:  50%;
-        position: fixed;
-        top: 6.5rem;
-        right: 6.5rem;
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
 
-        /*start lighter color*/
-        background-image: radial-gradient($color-primary-light, $color-primary-dark);
-        z-index: 100;
-        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+  /* this is where we can click the navigation circle */
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
 
+  /*icon*/
 
-        /* this will make the navigation pop out */  
-        //        transform: scale(80);
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    @include respond(tab-port) {
+      margin-top: 2.5rem;
+    }
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $dark-grey;
+      display: inline-block;
+
+      @include respond(tab-port) {
+        width: 2rem;
+        height: 1px;
+      }
     }
 
-
-
-    &__button {
-        background-color: $color-white;
-        height: 7rem;
-        width: 7rem;
-        position: fixed;
-        top: 6rem;
-        right: 6rem;
-        border-radius: 50%;
-        z-index: 2000;
-        text-align: center;
-        //        box-shadow: 0 1rem 3rem rgba($color-black, .1);
-        cursor:pointer;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
     }
 
-    &__nav {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 1500;
+    &::before {
+      top: -0.8rem;
 
-        /*removing navigation*/
-        opacity: 0;
-        width: 0;
-        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
+      @include respond(tab-port) {
+        top: -0.5rem;
+      }
     }
+    &::after {
+      top: 0.8rem;
 
-    &__list {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        list-style: none;
-        text-align: center;
-        width: 100%;
+      @include respond(tab-port) {
+        top: 0.5rem;
+      }
     }
+  }
 
-    &__item{
-        margin: 1.3rem;
-        backface-visibility: hidden;
-    }
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
 
-    &__link {
-        &:link,
-        &:visited{
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
 
-            display: inline-block;   
-            font-size: 3rem;
-            font-weight: 300;
-            color: $color-white;
-            text-decoration: none;
-            text-transform: uppercase;
-            padding: 1rem 2rem;
+  /* Making the menu hamburger animate */
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
 
-            background-image: linear-gradient(120deg, #eee 0%, transparent 50%, $color-white 50%);
-            background-size: 230%;
-            border-radius: 3px;
-            transition: all .4s;
-            box-shadow: 0 3px 3px #000;
-        }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
 
-        &:hover,
-        &:active {
-            background-position: 100%;
-            color: $color-primary;
-            transform: translateX(1rem);
-        }
-    }
-
-    /* this is where we can click the navigation circle */
-    &__checkbox:checked ~ &__background {
-        transform: scale(80);
-    }
-    &__checkbox:checked ~ &__nav {
-        opacity: 1;
-        width: 100%;
-    }
-
-
-
-
-    /*icon*/
-
-    &__icon {
-        position: relative;
-        margin-top: 3.5rem;
-        &,
-        &::before,
-        &::after {
-
-            width: 3rem;
-            height: 2px;
-            background-color: $dark-grey;
-            display: inline-block;
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;    
-            transition: all .2s;
-
-        }
-
-
-        &::before { top: -.8rem }
-        &::after { top:  .8rem }
-    }
-
-
-    &__button:hover &__icon::before {
-        top: -1rem;
-    }
-
-    &__button:hover &__icon::after {
-        top: 1rem;
-    }
-
-    /* Making the menu hamburger animate */
-    &__checkbox:checked + &__button &__icon {
-        background-color: transparent;
-    }  
-
-    &__checkbox:checked + &__button &__icon::before {
-        top: 0;
-        transform: rotate(135deg);
-    }
-
-    &__checkbox:checked + &__button &__icon::after {
-        top: 0;
-        transform: rotate(-135deg);
-    }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

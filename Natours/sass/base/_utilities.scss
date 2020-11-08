@@ -1,8 +1,23 @@
 .text-center {text-align: center !important;}
 
-.mb-8 {margin-bottom: 8rem !important;}
-.mb-6 {margin-bottom: 6rem !important;}
-.mb-4 {margin-bottom: 4rem !important;}
+.mb-8 {margin-bottom: 8rem !important;
+	@include respond(tab-port){
+		margin-bottom: 6;
+	    }
+}
+.mb-6 {margin-bottom: 6rem !important;
+
+	@include respond(tab-port){
+		margin-bottom: 4 !important;
+	    }
+
+}
+.mb-4 {margin-bottom: 4rem !important;
+
+	@include respond(tab-port){
+		margin-bottom: 3 !important;
+	    }
+}
 .mb-2 {margin-bottom: 2rem !important;}
 
 .mt-8 {margin-top: 8rem !important;}
