@@ -619,6 +619,12 @@ animation-duration: 3s;
   display: block;
   width: 90%;
   color: inherit; }
+  @media (max-width: 75em) {
+    .form__input {
+      width: 60%; } }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -635,6 +641,38 @@ animation-duration: 3s;
   margin-top: 0.2rem;
   display: block; }
 
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 1rem; } }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #7ed56f;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -647,6 +685,14 @@ animation-duration: 3s;
   transform: skewX(-12deg); }
   .story:not(:last-child) {
     margin-bottom: 4rem; }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     position: relative;
     width: 15rem;
@@ -666,13 +712,17 @@ animation-duration: 3s;
     -moz-clip-path: circle(50% at 50% 50%);
     /*moves the circle a bit on left*/
     transform: translateX(-3rem) skewx(12deg); }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     backface-visibility: hidden;
-    transition: all .5s; }
+    transition: all 0.5s; }
   .story__text {
-    transform: skewX(12deg); }
+    transform: skewX(12deg);
+    transform: skewx(0); }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -683,7 +733,7 @@ animation-duration: 3s;
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: all .5s; }
+    transition: all 0.5s; }
   .story:hover .story__caption {
     transform: translate(-50%, -50%);
     opacity: 1; }
@@ -714,24 +764,39 @@ animation-duration: 3s;
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    transition: all 0.4s .3s;
+    transition: all 0.4s 0.3s;
     /* To make the same height */
     display: table; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        display: inline-block; } }
   .popup__left {
     /* To make the same height */
     width: 33.333333%;
     display: table-cell;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        display: inline-block;
+        width: 100%; } }
   .popup__right {
     /* To make the same height */
     width: 66.666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        display: inline-block;
+        width: 100%; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        display: inline-block;
+        width: 49%; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -1153,9 +1218,21 @@ be 95% of the viewport height
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
-  height: 50rem;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 100%; } }
