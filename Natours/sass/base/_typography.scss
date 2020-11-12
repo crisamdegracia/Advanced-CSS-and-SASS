@@ -14,7 +14,8 @@ body {
   text-transform: uppercase;
 
   /*to remove the shaking*/
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   margin-bottom: 6rem;
 
   /* the name we created @keyframes 
@@ -40,7 +41,8 @@ body {
     font-size: 5rem;
     font-weight: 800;
     letter-spacing: 3.5rem;
-    animation: moveInLeft 3s ease-out;
+    -webkit-animation: moveInLeft 3s ease-out;
+            animation: moveInLeft 3s ease-out;
 
     @include respond(phone) {
       letter-spacing: 1rem;

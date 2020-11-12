@@ -1,14 +1,26 @@
+   /*
+
+        style.comp.css - .comp means compile
+        
+        "watch:sass" - to execute live changes
+        "compile:sass" - to compile to said file > style.comp.css
+        "concat:css" -  -o means output
+        
+        */
 {
   "name": "natours",
   "version": "1.0.0",
   "description": "1st Course CSS and SASS SCSS",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o style.comp.css css/icon.font.css"
   },
   "author": "Sambee",
   "license": "ISC",
   "devDependencies": {
+    "concat": "^1.0.3",
     "node-sass": "^4.14.1"
   }
 }

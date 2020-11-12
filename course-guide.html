@@ -199,6 +199,14 @@
                </pre
         >
       </div>
+      <h3>Tricks 2</h3>
+      <div>
+        <ul>
+          <li>
+            -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+          </li>
+        </ul>
+      </div>
       <h3>f2v6 | CSS Universal reset</h3>
       <div>
         <pre>
@@ -1079,18 +1087,116 @@
       </h3>
       <div class="row">
         <div class="container">
-          <img src="./images/advanced-css-img-17.jpg" alt="" class="img-size">
-        <pre>
+          <h5>Go to index.html on the footer</h5>
+          <img src="./images/advanced-css-img-17.jpg" alt="" class="img-size" />
+          <pre>
           Density img Switching in HTML: scrset= imgURL1 1x, imgURL2 2x 
+          what's the importance? - to save the loading of the images.
+          1x - is used for lower reso screen
+          2x - is used for high reso screen
+          
+        </pre
+          >
+          <pre>
+            Art Direction
+            using HTML element <picture></picture>
         </pre>
-        stopped at09:29
         </div>
       </div>
 
+      <h3>
+        f6v062 Responsive Images in HTML - Density and Resolution Switching
+      </h3>
+      <div class="row">
+        <div class="container">
+          <h5>go to index.html on compositio</h5>
+          <pre>
+            - art direction = we force the browser to use certain image 
+            according to a media query.
+            - in density and resolution switching - we will allow the browser to choose the best image
+              for the current viewport and pixel density situation
+          </pre>
+        </div>
+      </div>
+      <h3>f6v063 Responsive Images in CSS</h3>
+      <div class="row">
+        <div class="container">
+          create a smaller version of the image, for high res and low res.
+          <pre>
+          /*
+                  Normal image state for responsive css image 
+            - so its small.
+            - 1200px. this is enough
+            - so when higher than 1200px, fallback is the below @media min-resolution
+            */
+              background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.8),
+                  rgba($color-primary-dark, 0.8)
+                ),
+                url(../img/hero-small.jpg);
+        </pre
+          >
+          <pre>
 
+            /* 
+            192 dots per inch 
+            - the reso of Apple retina display - high reso screen
+            - same principle with max-width, min-width.  
+            - 600px is more than enough na daw to display the hero-small.jpg
+            - so the 192dpi is too much for bandwidth
+            - so we will extend the for the second condition
+            - 192dpi and the width is larger than 600px and 2000px
+            - so here,it will activate when is higher reso than 192dpi
+            -  3 condition
+            */
+          
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+                      only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                      only screen and (min-width: 125em) {
+                  background-image: linear-gradient(
+                      to right bottom,
+                      rgba($color-secondary-light, 0.8),
+                      rgba($color-secondary-dark, 0.8)),
+                  url(../img/hero.jpg);
+          
+              }
+          
+        </pre
+          >
+        </div>
+      </div>
 
-    </div><!-- lAST DIV  -->
+      <h3>f6v064 Testing for Browser Support with supports</h3>
+      <div class="row">
+        <div class="container">
+          <pre>
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
 
+          </pre>
+        </div>
+      </div>
+
+      <h3>f6v065 Setting up a Simple Build Process with NPM Scripts</h3>
+      <div class="row">
+        <div class="container">
+
+       <pre>
+        /*
+
+        style.comp.css - .comp means compile
+        
+        "watch:sass" - to execute live changes
+        "compile:sass" - to compile to said file > style.comp.css
+        
+        i dont understand why is he doing this!
+        */
+       </pre>
+        </div>
+      </div>
+    </div>
+    <!-- lAST DIV  -->
   </body>
   <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
   <script>

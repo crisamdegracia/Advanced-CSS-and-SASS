@@ -15,6 +15,7 @@
         
         
         /*making the video like a background cover */
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 }

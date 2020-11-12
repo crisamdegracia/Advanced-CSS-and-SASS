@@ -92,20 +92,35 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!--
+                 High Res and low res image option 
+                   sizes- view port to specify the width units for
+                    different breakpoints 
+                   and we can add more 'view ports'
+                   - 300px, is the last fallvack for pixel density of the screen
+                      -->
               <img
-                src="img/nat-1-large.jpg"
-                alt=""
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 1"
                 class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
               />
+
               <img
-                src="img/nat-2-large.jpg"
-                alt=""
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 2"
                 class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
               />
+
               <img
-                src="img/nat-3-large.jpg"
-                alt=""
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 3"
                 class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -399,10 +414,37 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
+        <!--
+             on the media the magic happens
+            there we can put the CSS media query
+            that's 600px
 
+            then on the srcset - we will put, the corresponding image wwe want
+            so in 600px we want the smaller image size
+
+            kaya dalawa, [img] and [source] is because, 
+            the img is the falback, when we do not meet the 600px or the 37.5rem
+
+            thats is why its called art direction
+          -->
+
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
 
         <!-- Density switching image -->
-        <img srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x" alt="" class="footer__logo" />
+        <!-- <img srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x" alt="" class="footer__logo" /> -->
       </div>
 
       <div class="row">
@@ -460,7 +502,6 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Quasdsdasam, laborum. Quas quibusdam expedita adipisci temporibus,
             ipsa odit ad quaerat maiores, error amet, voluptatum iure veniam,
-       
           </p>
           <a href="#section-tours" class="btn btn--success">Book now</a>
         </div>

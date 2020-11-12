@@ -4,21 +4,60 @@ be 95% of the viewport height
 */
 .header {
   height: 95vh;
+
+/*
+ Normal image state for responsive css image 
+- so its small.
+- 1200px. this is enough
+- so when higher than 1200px, fallback is the below @media min-resolution
+*/
   background-image: linear-gradient(
-    to right bottom,
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark, 0.8)
-    ),
-    url(../img/hero.jpg);
-    background-size: cover;
-    background-position: center;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-    position: relative;
-    
-    @include respond(phone) {
-      
-      height: 80vh;
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+    url(../img/hero-small.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  position: relative;
+
+  /* 
+  192 dots per inch 
+  - the reso of Apple retina display - high reso screen
+  - same principle with max-width, min-width.  
+  - 600px is more than enough na daw to display the hero-small.jpg
+  - so the 192dpi is too much for bandwidth
+  - so we will extend the for the second condition
+  - 192dpi and the width is larger than 600px and 2000px
+  - so here,it will activate when is higher reso than 192dpi
+  -  3 condition
+  */
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-secondary-light, 0.8),
+            rgba($color-secondary-dark, 0.8)),
+        url(../img/hero.jpg);
+
+    }
+
+
+  // @media (-webkit-min-device-pixel-ratio: 2),
+  //  (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px),
+  //   (min-resolution: 192dpi) and (min-width: 600px){
+  //   background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-secondary-light, 0.8),
+  //     rgba($color-secondary-dark, 0.8)),
+  //     url(/img/hero.jpg);
+  // }
+
+  @include respond(phone) {
+    height: 80vh;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
   }

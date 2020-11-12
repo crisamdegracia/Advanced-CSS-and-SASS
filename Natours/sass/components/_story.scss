@@ -55,7 +55,8 @@
   &__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
     transition: all 0.5s;
   }
 
@@ -86,7 +87,8 @@
   &:hover &__img {
     //        backface-visibility: hidden;
     transform: translateX(-4rem) scale(1);
-    filter: blur(3px) brightness(60%);
+    -webkit-filter: blur(3px) brightness(60%);
+            filter: blur(3px) brightness(60%);
     //        opacity: .4;
   }
 }

@@ -78,7 +78,8 @@
 
   &__item {
     margin: 1.3rem;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
   }
 
   &__link {

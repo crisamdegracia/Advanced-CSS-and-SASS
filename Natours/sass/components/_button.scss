@@ -98,13 +98,15 @@ animation-duration: 3s;
 
     &--animated {
         /* Args =  name - duration - time function - delay*/
-        animation: moveInFromBottom .5s ease-out .75s;
+        -webkit-animation: moveInFromBottom .5s ease-out .75s;
+                animation: moveInFromBottom .5s ease-out .75s;
 
         /*
         it'll auto apply the style up to 0% b4 D animation starts
         now the style will be applied before the animation starts. simple by using this fill-mode:backwards
         */
-        animation-fill-mode: backwards;
+        -webkit-animation-fill-mode: backwards;
+                animation-fill-mode: backwards;
     }
 
 }

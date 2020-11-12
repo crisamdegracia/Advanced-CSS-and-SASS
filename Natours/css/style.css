@@ -43,12 +43,30 @@ COLORS:
 Follow these CSS code techniques to make our life easier.
 */
 /*Margin*/
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-1rem); }
+  80% {
+    transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translate(-1rem); }
   80% {
     transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@-webkit-keyframes moveInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -117,6 +135,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   /*to remove the shaking*/
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   margin-bottom: 6rem;
   /* the name we created @keyframes 
@@ -142,6 +161,7 @@ body {
     font-size: 5rem;
     font-weight: 800;
     letter-spacing: 3.5rem;
+    -webkit-animation: moveInLeft 3s ease-out;
     animation: moveInLeft 3s ease-out; }
     @media (max-width: 37.5em) {
       .heading-primary--main {
@@ -328,11 +348,13 @@ animation-duration: 3s;
     transition: all .3s; }
   .btn--animated {
     /* Args =  name - duration - time function - delay*/
+    -webkit-animation: moveInFromBottom .5s ease-out .75s;
     animation: moveInFromBottom .5s ease-out .75s;
     /*
         it'll auto apply the style up to 0% b4 D animation starts
         now the style will be applied before the animation starts. simple by using this fill-mode:backwards
         */
+    -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
@@ -370,6 +392,7 @@ animation-duration: 3s;
     height: 100%;
     width: 100%;
     /*making the video like a background cover */
+    -o-object-fit: cover;
     object-fit: cover; }
 
 /* IMAGES */
@@ -538,6 +561,7 @@ animation-duration: 3s;
       box-shadow: none; }
       .card__side--back {
         transform: rotatey(0);
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
     .card:hover .card__side--front {
       transform: rotatey(0); }
@@ -718,6 +742,7 @@ animation-duration: 3s;
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: all 0.5s; }
   .story__text {
@@ -739,6 +764,7 @@ animation-duration: 3s;
     opacity: 1; }
   .story:hover .story__img {
     transform: translateX(-4rem) scale(1);
+    -webkit-filter: blur(3px) brightness(60%);
     filter: blur(3px) brightness(60%); }
 
 .popup {
@@ -747,19 +773,26 @@ animation-duration: 3s;
   position: fixed;
   right: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  /* backdrop-fillter - doesnt work on Firefox */ }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .popup__content {
+    backdrop-filter: blur(20px);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
     background-color: #fff;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6);
     border: 3px;
     overflow: hidden;
     opacity: 0;
@@ -953,12 +986,29 @@ be 95% of the viewport height
 */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /*
+ Normal image state for responsive css image 
+- so its small.
+- 1200px. this is enough
+- so when higher than 1200px, fallback is the below @media min-resolution
+*/
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: center;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   position: relative;
+  /* 
+  192 dots per inch 
+  - the reso of Apple retina display - high reso screen
+  - same principle with max-width, min-width.  
+  - 600px is more than enough na daw to display the hero-small.jpg
+  - so the 192dpi is too much for bandwidth
+  - so we will extend the for the second condition
+  - 192dpi and the width is larger than 600px and 2000px
+  - so here,it will activate when is higher reso than 192dpi
+  -  3 condition
+  */
   /*
     to center element
 
@@ -968,6 +1018,9 @@ be 95% of the viewport height
     are in relation in the main block element
     while transform is only related to the main element itself
     */ }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       height: 80vh;
@@ -1102,6 +1155,7 @@ be 95% of the viewport height
     width: 100%; }
   .navigation__item {
     margin: 1.3rem;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
   .navigation__link:link, .navigation__link:visited {
     display: inline-block;
