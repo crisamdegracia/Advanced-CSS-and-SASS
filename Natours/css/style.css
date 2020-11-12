@@ -101,13 +101,13 @@ html {
         - if the is only complicated
     */
   font-size: 62.5%; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (min-width: 112.5em) {
+  @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
 
@@ -117,9 +117,14 @@ Import! this will be inherited to their child elements
 body {
   box-sizing: border-box;
   padding: 3rem; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
+
+/* when selecting a text */
+::selection {
+  background-color: #7ed56f;
+  color: #fff; }
 
 /*
 Import! this will be inherited to their child elements
@@ -163,7 +168,7 @@ body {
     letter-spacing: 3.5rem;
     -webkit-animation: moveInLeft 3s ease-out;
     animation: moveInLeft 3s ease-out; }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
         font-size: 4rem;
@@ -173,7 +178,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.74rem; }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: 0.5rem;
         font-size: 1.4rem; } }
@@ -190,10 +195,10 @@ body {
   background-image: linear-gradient(to right, #55c57a, #28b485);
   -webkit-background-clip: text;
   color: transparent; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 2.5rem; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .heading-secondary {
       font-size: 2; } }
   .heading-secondary:hover {
@@ -215,19 +220,19 @@ body {
 
 .mb-8 {
   margin-bottom: 8rem !important; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .mb-8 {
       margin-bottom: 6; } }
 
 .mb-6 {
   margin-bottom: 6rem !important; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .mb-6 {
       margin-bottom: 4 !important; } }
 
 .mb-4 {
   margin-bottom: 4rem !important; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .mb-4 {
       margin-bottom: 3 !important; } }
 
@@ -406,7 +411,7 @@ animation-duration: 3s;
     transition: all .2s;
     /* the off space of the outline border*/
     outline-offset: 1rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .composition__photo {
         float: left;
         position: relative;
@@ -415,14 +420,14 @@ animation-duration: 3s;
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p1 {
           top: 0;
           transform: scale(1.3); } }
     .composition__photo--p2 {
       right: 0rem;
       top: 2rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p2 {
           top: -1rem;
           transform: scale(1.3);
@@ -430,7 +435,7 @@ animation-duration: 3s;
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p3 {
           top: 1rem;
           left: 0;
@@ -548,7 +553,11 @@ animation-duration: 3s;
     font-weight: 100; }
 
 /*---------------  MEDIA QUERRY  ---------------------*/
-@media (max-width: 56.25em) {
+/*
+   only screen and (hover: none){
+    - on phone or tab - we dont want an hover effect
+  */
+@media only screen and (max-width: 56.25em), only screen and (hover: none) {
   .card {
     height: auto;
     border-radius: 3px;
@@ -612,7 +621,7 @@ animation-duration: 3s;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: all .3s; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .feature-box {
       padding: 2rem; } }
   .feature-box__icon {
@@ -623,7 +632,7 @@ animation-duration: 3s;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
         margin-bottom: 0; } }
   .feature-box:hover {
@@ -643,10 +652,10 @@ animation-duration: 3s;
   display: block;
   width: 90%;
   color: inherit; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .form__input {
       width: 60%; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .form__input {
       width: 100%; } }
   .form__input:focus {
@@ -673,7 +682,7 @@ animation-duration: 3s;
 .form__radio-group {
   width: 49%;
   display: inline-block; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .form__radio-group {
       width: 100%;
       margin-bottom: 1rem; } }
@@ -709,12 +718,12 @@ animation-duration: 3s;
   transform: skewX(-12deg); }
   .story:not(:last-child) {
     margin-bottom: 4rem; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .story {
       width: 100%;
       padding: 4rem;
       padding-left: 7rem; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .story {
       transform: skewX(0); } }
   .story__shape {
@@ -736,7 +745,7 @@ animation-duration: 3s;
     -moz-clip-path: circle(50% at 50% 50%);
     /*moves the circle a bit on left*/
     transform: translateX(-3rem) skewx(12deg); }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .story__shape {
         transform: translateX(-3rem) skewX(0); } }
   .story__img {
@@ -800,7 +809,7 @@ animation-duration: 3s;
     transition: all 0.4s 0.3s;
     /* To make the same height */
     display: table; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .popup__content {
         display: inline-block; } }
   .popup__left {
@@ -809,7 +818,7 @@ animation-duration: 3s;
     display: table-cell;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .popup__left {
         display: inline-block;
         width: 100%; } }
@@ -819,14 +828,14 @@ animation-duration: 3s;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .popup__right {
         display: inline-block;
         width: 100%; } }
   .popup__img {
     display: block;
     width: 100%; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .popup__img {
         display: inline-block;
         width: 49%; } }
@@ -905,10 +914,10 @@ animation-duration: 3s;
     */ }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .row {
       max-width: 50rem;
       padding: 0 3rem; } }
@@ -923,11 +932,11 @@ animation-duration: 3s;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 0;
           margin-bottom: 6rem; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
   .row .col-1-of-2 {
@@ -1021,7 +1030,7 @@ be 95% of the viewport height
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .header {
       height: 80vh;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
@@ -1045,13 +1054,13 @@ be 95% of the viewport height
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .footer {
       padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__logo-box {
         margin-bottom: 6rem; } }
   .footer__logo {
@@ -1065,7 +1074,7 @@ be 95% of the viewport height
     border-top: 1px solid #eee;
     padding-top: 2rem;
     display: inline-block; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__navigation {
         width: 100%;
         text-align: center; } }
@@ -1089,7 +1098,7 @@ be 95% of the viewport height
     display: inline-block;
     width: 80%;
     float: right; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__copyright {
         width: 100%;
         float: none; } }
@@ -1112,7 +1121,7 @@ be 95% of the viewport height
     z-index: 100;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     /* this will make the navigation pop out */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .navigation__background {
         top: 2.5rem;
         right: 2.5rem;
@@ -1129,7 +1138,7 @@ be 95% of the viewport height
     z-index: 2000;
     text-align: center;
     cursor: pointer; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .navigation__button {
         height: 5rem;
         width: 5rem;
@@ -1182,7 +1191,7 @@ be 95% of the viewport height
   .navigation__icon {
     position: relative;
     margin-top: 3.5rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .navigation__icon {
         margin-top: 2.5rem; } }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
@@ -1190,7 +1199,7 @@ be 95% of the viewport height
       height: 2px;
       background-color: #333;
       display: inline-block; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .navigation__icon, .navigation__icon::before, .navigation__icon::after {
           width: 2rem;
           height: 1px; } }
@@ -1201,12 +1210,12 @@ be 95% of the viewport height
       transition: all 0.2s; }
     .navigation__icon::before {
       top: -0.8rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .navigation__icon::before {
           top: -0.5rem; } }
     .navigation__icon::after {
       top: 0.8rem; }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .navigation__icon::after {
           top: 0.5rem; } }
   .navigation__button:hover .navigation__icon::before {
@@ -1226,11 +1235,11 @@ be 95% of the viewport height
   background-color: #f7f7f7;
   padding: 25rem 0 20rem 0;
   margin-top: -25vh; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .section-about {
       padding: 30rem 0;
       margin-top: -10vh; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-about {
       margin-top: -25vh; } }
 
@@ -1243,7 +1252,7 @@ be 95% of the viewport height
   /*selects only the direct children*/ }
   .section-features > * {
     transform: skewY(7deg); }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-features {
       padding: 10rem 0; } }
 
@@ -1251,21 +1260,21 @@ be 95% of the viewport height
   background-color: #f7f7f7;
   padding: 25rem 0 20rem 0;
   margin-top: -10rem; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-tours {
       padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   padding: 15rem 0;
   position: relative; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-stories {
       padding: 10rem 0; } }
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-book {
       padding: 10rem 0; } }
 
@@ -1274,19 +1283,19 @@ be 95% of the viewport height
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .book {
       background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
       background-size: cover; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .book {
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       .book__form {
         width: 65%; } }
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       .book__form {
         width: 100%; } }

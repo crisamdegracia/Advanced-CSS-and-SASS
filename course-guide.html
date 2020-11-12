@@ -1179,7 +1179,10 @@
       </div>
 
       <h3>f6v065 Setting up a Simple Build Process with NPM Scripts</h3>
+      
+      
       <div class="row">
+        <h5>Very Important</h5>
         <div class="container">
 
        <pre>
@@ -1188,11 +1191,57 @@
         style.comp.css - .comp means compile
         
         "watch:sass" - to execute live changes
+        "devserver": "live-server",
+            - we listed it in Json so we can call it in npm-run-all
+            - but it will not work bcoz live-server is built now in the vsCode 
+        "start": "npm-run-all --parallel devserver watch:sass",
+              - --parallel so they will run at the same time
+              - this is to run both live server and watch the css
+
         "compile:sass" - to compile to said file > style.comp.css
-        
-        i dont understand why is he doing this!
-        */
+        "concat:css" -  -o means output 
+            - npm install cancat, so we can use it. 
+            - it will combine the listed css file there, so we can have 1 http request
+            - 1st the file where combined files, then the files that will be combined.
+        "prefix:css": "" 
+           - npm autoprefixer --save
+           - --save means save it as dev dependency
+           - in order to autoprefixer to work we need one more npm package
+           - npm install postcss-cli --save-dev
+           - because the autoprefixer is part of this postcss package
+           - the command is postcss --use autoprefixer really.
+           - -b means browsers, then we can specify which browser we 
+           want to target, the easiest option is 'last 10 versions'
+                - meaning we want to specifically 5 versions of browsers
+                - and its data come from caniuse.com
+                - so we can be sure to add all the prefixes that we need. AWESOME!
+                - next is input file  style.concat.css  
+                - so pupunta din dun sa style.concat.css, pero gagawa rin syang file na style.prefix.css
+                -  then we specify -o  css/style.prefix.css for output parameter
+                - for this to work I did a little tweak
+                - \"last 10 versions\"  and I also installed npm postcss 
+
+
+          "compress:css" - no need to use node-sass package
+          "compress:css": "node-sass css/style.prefix.css  css/style.css"
+              - args in order - 
+              - package we use [node-sass]
+              - kung san pupunta ung output [css/style.prefix.css]
+              - then the final file kung san mapupunta ung compress [css/style.css] 
+                  - pwedeng NAME din sya. any name
+              - --output-style compressed - to compress actually work
+       
+       "build:css" - for this to work we need to install npm-run-all --save-dev
+              */
+
        </pre>
+        </div>
+      </div>
+
+      <h3>f6v066 Wrapping up the Natours Project Final Considerations</h3>
+      <div class="row">
+        <div class="container">
+          ::selection - we can modified the style when we select text
         </div>
       </div>
     </div>

@@ -186,7 +186,13 @@
   }
 }
 /*---------------  MEDIA QUERRY  ---------------------*/
-@include respond(tab-port) {
+// @include respond(tab-port) {
+/*
+   only screen and (hover: none){
+    - on phone or tab - we dont want an hover effect
+  */
+  @media only screen and (max-width: 56.25em ),
+  only screen and (hover: none){
   .card {
     height: auto;
     border-radius: 3px;
