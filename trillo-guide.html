@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-v3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="./node_modules/skeleton-css/css/skeleton.css"
+    />
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css" />
+    <title>Trillo Project</title>
+  </head>
+  <body>
+    <header>
+      <div class="header--container container text-center u-max-full-width">
+        <h1 class="header--heading m-0">Trillo</h1>
+        <p class="m-0">
+          A course guide for Trillo Project
+          <span>
+            <pre class="m-0">Advanced CSS and SASS by: Jason Schedmith</pre>
+          </span>
+        </p>
+      </div>
+    </header>
+
+    <main class="container u-max-full-width">
+      <section class="section--left-panel one-third column">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+      </section>
+
+      <section
+        class="section--right-panel two-thirds column mt-40"
+        id="accordion"
+      >
+        <h3>f7v68</h3>
+        <div>
+          <img class="img-flex" src="./images/trillo/adv-trillo-1.jpg" alt="" />
+        </div>
+        <h3>f7v69 A Basic Intro to Flexbox The Flex Container</h3>
+        <div>
+          <h5>To container</h5>
+          <pre>
+	[display]:flex;
+		- So we can now use flex css style.
+
+	[flex-direction]: row;
+		- :row is default.
+		- :row-verse, :column-reverse is another value
+		- :column, will eat 100% of width. :column-reverse, just reverse.
+	
+	[justify-content]: center;
+		- to control how the items shud be positioned
+		- :space-between - the spaces between.
+		- :space-around  - will have the same amount,
+			- but the space of gutter is 50% less. 
+		- :space-evenly - space between and gutter are the same.
+		- :flex-end - all items is in right-end with no spaces.
+		- :flex-start - all items is in left-end with no spaces.
+		  
+	[align-items]: gagana sya kung ung isang item is iba ung size (height)
+		- its default value is stretch
+			- meaning, khit isa lang ung my ibang size, lahat ng items e magiging ganun din.
+		- :center - the alignment will be center; along cross axis
+		- :flex-start - the alignment starts at the top. 
+			- tapos ung merong ibang size lang ung stretched.
+		- :flex-end - oposite ng flex-start.
+		- :baseline - works with texts. kung merong isang item na iba ung font-size, aalign sya from bottom. gulo ba?
+	</pre
+          >
+          <h5>The most used on flex-box container</h5>
+          <pre>
+	flex-direction: row
+	justify-content: center
+	align-items: center
+
+	when we change the flex-direction: row to :column 
+	- now it will not gonna eat the whole width.
+	- it's becoz of align-items: center;
+	- we can  now play align-items: flex-start or end.
+	- now for example we align-items: flex-end.
+		- all item now will be centered vertically
+		- with same gutter top and bottom
+	  </pre
+	  >
+        </div>
+	<h3>f7v070 A Basic Intro to Flexbox Flex Items</h3>
+	<div>
+	<pre>
+	[Align-self] - it override the [align-items]
+		- so if the container has [align-items: center] we can override it
+		- for ex. using :flex-end.
+	[order] - all the orders of flex-items is 0
+		- now if we put -1 as value on item #4 the number 4 will go in the first line
+		- so the lower the order number, it will the 1st in the order.
+
+	[flex-grow] - 1; it will grow its width. it will occupy the space they can.
+		- but if the other items has different [flex-grow] value for ex. 2.
+		- it will grow bigger that the previous size.
+		- it will multiply the size of 1 
+
+	[flex]  - same as [flex-grow: 1] and [flex-basis: 300px] and [flex-shrink:1]
+		- if we set [flex: 1] in just 1 item. it will occupy all the spaces
+		- and all remain items will just occupy their spaces but no expand
+		
+	[flex: 0 0 300px]  - 1st [flex-grow] - 2nd [flex-shrink] - 3rd [flex-basis]
+
+	[flex-basis] - we can set the width of a flex-item 
+		- instead we use width on flex-items we use this.
+		- 20% - of the container. it can be px, em, rem.
+		- if 1 item has this property. it will get 20% size than other elements.
+
+	[flex-shrink] - 1; default. by value of 1, it can allow to shrink if this applies on one or all items	
+		- 0; if zero value is set, it will now no longer can be shrink. when resizing the screen.
+
+	[small screen] - if we resize the window, the sizes will maybe back to normal. 
+		- becoz there is no extra space.
+	
+	
+	</pre>
+	</div>
+      </section>
+    </main>
+  </body>
+  <script src="./jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+      });
+    });
+  </script>
+</html>

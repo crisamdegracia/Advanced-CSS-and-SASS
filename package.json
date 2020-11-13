@@ -1,0 +1,23 @@
+{
+  "name": "advanced-css-and-sass",
+  "version": "1.0.0",
+  "description": "Course projects",
+  "main": "jquery-v3.5.1.min.js",
+  "dependencies": {
+    "skeleton-css": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisamdegracia/Advanced-CSS-and-SASS.git"
+  },
+  "author": "Sambee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisamdegracia/Advanced-CSS-and-SASS/issues"
+  },
+  "homepage": "https://github.com/crisamdegracia/Advanced-CSS-and-SASS#readme"
+}
