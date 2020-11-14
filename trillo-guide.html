@@ -18,7 +18,7 @@
         <p class="m-0">
           A course guide for Trillo Project
           <span>
-            <pre class="m-0">Advanced CSS and SASS by: Jason Schedmith</pre>
+            <pre class="m-0">Advanced CSS and SASS by: Jonas Schedtmann</pre>
           </span>
         </p>
       </div>
@@ -40,6 +40,14 @@
         class="section--right-panel two-thirds column mt-40"
         id="accordion"
       >
+        <h3>Awesome Trick</h3>
+        <div>
+          <pre>
+	//it says it will grow as much as it can. AWESOME!
+	flex: 1; Apply this on flex-item.
+	</pre
+          >
+        </div>
         <h3>f7v68</h3>
         <div>
           <img class="img-flex" src="./images/trillo/adv-trillo-1.jpg" alt="" />
@@ -89,11 +97,11 @@
 		- all item now will be centered vertically
 		- with same gutter top and bottom
 	  </pre
-	  >
+          >
         </div>
-	<h3>f7v070 A Basic Intro to Flexbox Flex Items</h3>
-	<div>
-	<pre>
+        <h3>f7v070 A Basic Intro to Flexbox Flex Items</h3>
+        <div>
+          <pre>
 	[Align-self] - it override the [align-items]
 		- so if the container has [align-items: center] we can override it
 		- for ex. using :flex-end.
@@ -124,8 +132,111 @@
 		- becoz there is no extra space.
 	
 	
+	</pre
+          >
+        </div>
+
+        <h3>f7v071 A Basic Intro to Flexbox Adding More Flex Items</h3>
+        <div>
+          <pre>
+	[flex-wrap] - default value :no-wrap
+		- its a propert for flex-container
+		- if other flex-items has different [order] number value then this one or many item will move down.
+		- then once we start resizing our screen to smaller other items will also go down.
+	[align-content] - is a partner of [flex-wrap] (in my perspective) 
+		- it will align rows along the cross axis
+		- pretty similar to [align-items]
+		- :space-between - the items will be in top and bottom. so there is space in between.
+
+	</pre
+          >
+        </div>
+
+        <h3>f7v073 Defining Project Settings and Custom Properties</h3>
+        <div>
+          <h5>Global resets</h5>
+          <pre>
+	* {
+	margin: 0;
+	padding: 0;
+	}
+	
+	*::before,
+	*::after,
+	* {
+	box-sizing: inherit;
+	}
+	
+	html {
+	box-sizing: border-box;
+	font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+    	  }
+	  </pre
+          >
+          <h5>Defining variable in css</h5>
+          <pre>
+	-- is necesarry for declaration	
+	:root {
+	--color-primary: #eb2f64;
+	}
+	</pre
+          >
+          <h5>Calling defined variable</h5>
+          <pre>
+	   color: var(--color-primary);
+	  </pre
+          >
+        </div>
+
+        <h3>f7v074 Building the Overall Layout</h3>
+        <div>
+          <pre>
+	//it says it will grow as much as it can. AWESOME! trick!
+	flex: 1;
+	</pre
+          >
+        </div>
+
+        <h3>f7v075 Building the Header - Part 1</h3>
+        <div>
+          <h5>Why use SVG?</h5>
+          <pre>
+	SVG - Scallable Vector Graphics
+		- icon-font has a lot of problem. some browsers only show square.
+		- and we cant also change the color.
+		- so SVG to here to the rescue
+		- icomoon.io - 1 of the website we can use for SVG icons
+			- choose only the icons we need. remove .png.
+			- copy only the SVG folder and symbol-defs.svg
+			- then change the symbol-defs.sgv to sprite.svg
+			- only for web browser
+			</pre
+          >
+
+          <h5>How to call SVG</h5>
+          <pre>
+	<textarea class="textarea-code-sm">
+	<svg class="search__icon">
+	<use xlink:href="./img/sprite.svg#i-magnifying-glass"></use>
+	</svg>
+	</textarea>
 	</pre>
-	</div>
+	<h5>Calling siblings CSS selector</h5>
+	<pre>
+	<textarea name="" id="" cols="30" rows="10" class="textarea-code-sm">
+		
+		//   We can use this selector to select the siblings
+		&__input:focus + &__button {
+		  background-color: var(--color-grey-light-3);
+		}
+	      
+	</textarea>
+	</pre>
+
+	<pre>
+	We can do also do flex-content together with flex-item.
+	</pre>
+        </div>
       </section>
     </main>
   </body>
