@@ -43,8 +43,53 @@
         <h3>Awesome Trick</h3>
         <div>
           <pre>
+	<h5>Flex: 1</h5>
 	//it says it will grow as much as it can. AWESOME!
 	flex: 1; Apply this on flex-item.
+
+	<h5>Select all direct children</h5>
+	.user-nav {
+		background-color: yellow;
+		display: flex;
+		align-items: center;
+		// the user-nav and all the direct children
+		& > * {
+	      
+		}
+
+		the children are 
+		  - __icon-box
+		  - __user
+
+	<h5>Easiest way to center things</h5>
+		display: flex;
+		align-items: center;
+
+	<h5>Changing color of SVG</h5>
+	fill: var(--color-grey-dark-2);
+	use [fill]
+
+	// the current color of what is using. whaat?
+	// its just like an inherit color, for SGV
+	fill: currentColor;
+	<h5> Center Text </h5>
+	//put this on the main container
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	<h5>Putting top or bottom the elements</h5>
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	<h5>Where transform starts</h5>
+	transform-origin: right-end; 
+
+	<h5>Modern animation</h5>
+	transition: transform 0.2s, 
+		width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+	 	background-color .1s;
 	</pre
           >
         </div>
@@ -197,7 +242,7 @@
           >
         </div>
 
-        <h3>f7v075 Building the Header - Part 1</h3>
+        <h3>f7v075 and v76 Building the Header - Part 1 and 2</h3>
         <div>
           <h5>Why use SVG?</h5>
           <pre>
@@ -236,7 +281,29 @@
 	<pre>
 	We can do also do flex-content together with flex-item.
 	</pre>
-        </div>
+	</div>
+	
+	<h3>f7v077 Building the Header - Part 3</h3>
+	<div>
+	<pre>
+	.user-nav {
+		background-color: yellow;
+		display: flex;
+		align-items: center;
+		
+		// the user-nav and all the direct children
+		& > * {
+		
+		}
+	</pre>
+	</div>
+
+	<h3>f7v078 & 79 Building the Navigation - Part 1 and 2</h3>
+	<div>
+	<pre>
+	80 na!!
+	</pre>
+	</div>
       </section>
     </main>
   </body>
