@@ -11,7 +11,7 @@ min-height: 50rem;
 	font-size: 1.4rem;
 height: 7rem;
 background-color: #fff;
-border-bottom: var(--color-grey-light-2);
+border-bottom: 1px solid var(--color-grey-light-2);
 
 display: flex;
 justify-content: space-between;
@@ -32,7 +32,6 @@ justify-content: space-between;
 }
 
 .hotel-view {
-	background-color: goldenrod;
 	height: 80rem;
 	//it says it will grow as much as it can. AWESOME!
 	flex: 1;
