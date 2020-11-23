@@ -89,9 +89,32 @@
 	<h5>Modern animation</h5>
 	transition: transform 0.2s, 
 		width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
-	 	background-color .1s;
-	</pre
-          >
+		 background-color .1s;
+	<h5>Not last-child but las-of-type</h5>
+	.paragraph:not(:last-of-type) {
+		margin-bottom: 2rem;
+	      }
+	<h5>2 Rows on Flex Item</h5>
+	&__list {
+	display: flex;
+	flex-wrap: wrap;
+      
+	&__item {
+		flex: 0 0 50%;
+	      } }
+
+	<h5>Mask</h5>
+	A mask defines an area where we can look through the element
+	and see what's behind that element.
+
+	to color - image
+	background-color: var(--color-primary);
+	-webkit-mask-image:url(../img/chevron-thin-right.svg);
+
+	<h3>A reminder for reusing border-box</h3>
+	box-sizing: content-box;
+	      - we use it on the images and friends.
+	</pre>
         </div>
         <h3>f7v68</h3>
         <div>
@@ -115,13 +138,14 @@
 		- :space-around  - will have the same amount,
 			- but the space of gutter is 50% less. 
 		- :space-evenly - space between and gutter are the same.
-		- :flex-end - all items is in right-end with no spaces.
+		- :flex-end - all items is in right-end with no spaces. 
 		- :flex-start - all items is in left-end with no spaces.
 		  
 	[align-items]: gagana sya kung ung isang item is iba ung size (height)
 		- its default value is stretch
 			- meaning, khit isa lang ung my ibang size, lahat ng items e magiging ganun din.
 		- :center - the alignment will be center; along cross axis
+			  - parang ung position: absolute,top50%,left50%;transform(-50%,-50%);
 		- :flex-start - the alignment starts at the top. 
 			- tapos ung merong ibang size lang ung stretched.
 		- :flex-end - oposite ng flex-start.
@@ -150,6 +174,7 @@
 	[Align-self] - it override the [align-items]
 		- so if the container has [align-items: center] we can override it
 		- for ex. using :flex-end.
+		- :stretch use this to strectch the whole size of for the container
 	[order] - all the orders of flex-items is 0
 		- now if we put -1 as value on item #4 the number 4 will go in the first line
 		- so the lower the order number, it will the 1st in the order.
@@ -266,8 +291,8 @@
 	</svg>
 	</textarea>
 	</pre>
-	<h5>Calling siblings CSS selector</h5>
-	<pre>
+          <h5>Calling siblings CSS selector</h5>
+          <pre>
 	<textarea name="" id="" cols="30" rows="10" class="textarea-code-sm">
 		
 		//   We can use this selector to select the siblings
@@ -278,14 +303,15 @@
 	</textarea>
 	</pre>
 
-	<pre>
+          <pre>
 	We can do also do flex-content together with flex-item.
-	</pre>
-	</div>
-	
-	<h3>f7v077 Building the Header - Part 3</h3>
-	<div>
-	<pre>
+	</pre
+          >
+        </div>
+
+        <h3>f7v077 Building the Header - Part 3</h3>
+        <div>
+          <pre>
 	.user-nav {
 		background-color: yellow;
 		display: flex;
@@ -295,17 +321,29 @@
 		& > * {
 		
 		}
-	</pre>
-	</div>
+	</pre
+          >
+        </div>
 
-	<h3>f7v078 & 79 Building the Navigation - Part 1 and 2</h3>
-	<div>
-	<pre>
+        <h3>f7v078 & 79 Building the Navigation - Part 1 and 2</h3>
+        <div>
+          <pre>
 	80 na!!
-	</pre>
+	</pre
+          >
+        </div>
+
+        <h3>f7v080 - 81 Building the Hotel Overview - Part 1 2</h3>
+        <div></div>
+
+        <h3>f7v082 and 83 Building the Description Section - Part 1</h3>
+        <div>
+		we use mask.
+		and many more but i was lazy to write here.
+		I wrote it under tricks section.
 	</div>
 
-	<h3>f7v080 - 81 Building the Hotel Overview - Part 1 2</h3>
+	<h3>f7v084 Building the User Reviews Section</h3>
 	<div>
 		
 	</div>
