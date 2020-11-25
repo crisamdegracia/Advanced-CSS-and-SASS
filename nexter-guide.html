@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-v3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="./node_modules/skeleton-css/css/skeleton.css"
+    />
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css" />
+    <title>Nexter</title>
+  </head>
+  <body>
+    <header>
+      <div class="header--container header--container--nexter container text-center u-max-full-width">
+        <h1 class="header--heading m-0">Nexter</h1>
+        <p class="m-0">
+          A course guide for Nexter Project CSS Grid
+          <span>
+            <pre class="m-0">Advanced CSS and SASS by: Jonas Schedtmann</pre>
+          </span>
+        </p>
+      </div>
+    </header>
+
+    <main class="custom__container">
+      <section
+        class="section--right-panel mt-40"
+        id="accordion"
+      >
+<h3>f8v90 - 090 Why CSS Grid A Whole New Mindset</h3>
+<div>
+  <img src="./images/nexter/advanced-css-grids-1.jpg" alt="" class="img-size">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+</div>
+
+<h3>f8v092 Creating Our First Grid</h3>
+<div>
+  <h5>Emmet tricks</h5>
+   container>.item.item--$*6 
+    - giving us 6 items. Boom!
+
+    <pre>
+  <h5>Grid Basic Fundamental</h5>    
+	// start to use grid
+	display: grid;
+
+	// 1st value - 1st row  | 2nd value and row
+	grid-template-rows: 60px 150px;
+	grid-template-columns: 150px 150px 150px;
+
+
+	// different gap for row and column
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+
+	//both column and row gap - same px
+	grid-gap: 30px;
+	
+    </pre>
+</div>
+
+<h3>f8v093 Getting Familiar with the fr Unit</h3>
+<div>
+  
+</div>
+</section>
+    </main>
+  </body>
+  <script src="./jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+      });
+    });
+  </script>
+</html>
