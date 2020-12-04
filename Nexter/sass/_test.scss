@@ -70,6 +70,8 @@
 }
 
  */
+
+// Method 1 
 /* Line numbers
 
 .challenge {
@@ -109,6 +111,11 @@
 }
 
 */
+
+
+
+// Method 2
+// Line names
 /* 
 .challenge {
 	width: 1000px;
@@ -145,13 +152,66 @@
 }
 }
  */
+
+// Method 3: Name Grid Areas
+
+
+// .challenge {
+// 	width: 1000px;
+// 	margin: 30px auto;
+
+// 	display: grid;
+// 	grid-template-rows: 100px 200px 400px 100px;
+// 	grid-template-columns: repeat(3, 1fr) 200px;
+// 	grid-gap: 30px;
+
+// 	grid-template-areas: "head head head head"
+// 						 "box box box side"
+// 						 "main main main side"
+// 						 "foot foot foot foot";
+// 	& > * {
+// 		background-color:#231;
+// 		padding: 20px;
+// 		color: #fff;
+// 		font-size: 30px;
+// 		font-family: sans-serif;
+// 	} 
+	
+
+// .header {
+// 	grid-area: head;
+// }
+
+// .sidebar {
+// 	grid-area: side;
+// }
+
+// .main-content {
+//  grid-area: main;
+// }
+// .footer {
+// grid-area: foot;
+// }
+// }
+
+
+
+//F8V100
+//100 Implicit Grids vs. Explicit Grids
+
 .container {
-  width: 1000px;
-  margin: 30px auto;
-  background-color: #ddd; }
-  .container .item {
-    padding: 20px;
-    color: #fff;
-    font-family: serif;
-    font-size: 30px;
-    background-color: #232; }
+	width: 1000px;
+	margin: 30px auto;
+	background-color: #ddd;
+
+	.item {
+		padding: 20px;
+		color: #fff;
+		font-family: serif;
+		font-size: 30px;
+		background-color: #232;
+	}
+}
+
+
+
