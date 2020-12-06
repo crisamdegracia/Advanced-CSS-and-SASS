@@ -30,6 +30,61 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 
 		<main class="custom__container">
 			<section class="section--right-panel mt-40" id="accordion">
+				<h3>Tricks</h3>
+				<div>
+					to center vertically and horizontally using grid
+					<pre><code>
+	align-items: center; //default value Stretch other - center / end / start
+	justify-items: center;//default value Stretch other - center / end / start
+						
+					</code></pre>
+					main grid code
+					<pre>
+						
+						<code>
+	display: grid;
+	grid-template-columns:repeat(2, 1fr);
+	grid-template-rows:repeat(2, 150px);
+	grid-gap: 30px;
+						</code>
+
+							<pre><code>
+	// just like in flex box	
+	align-self: start;
+	justify-self: start;
+						</code></pre>
+					</pre>
+
+						<pre>
+							<code>
+								
+	on parent block
+	//-items - is for individual items 
+	// align - mean for vertical direction or column axis
+	- align-items & align-content
+	// justify - means for horizontal direction, row axis	
+	- justify-content & justify-items;
+	align-item:
+	justify-items:
+	
+	//-content: means is to align the entire tracks
+	justify-content:
+	align-content:
+							</code>
+					</pre>
+					<h5>Fix the whole.</h5>
+					<pre><code>
+						//in grid parent
+						grid-auto-flow: row  dense;
+
+						//in grid items
+						&--6 {
+							background-color: red;
+							grid-row: 2 / span 2;
+						}
+
+					</code></pre>
+				</div>
 				<h3>f8v90 - 090 Why CSS Grid A Whole New Mindset</h3>
 				<div>
 					<img
@@ -335,10 +390,111 @@ dapat daw my diferent names.
 				<h3>f8v100 Implicit Grids vs. Explicit Grids</h3>
 				<div>
 					<pre>
+						1. explicit - becoz we explicitly defined how these rows
+						and columns shud look like
+								- the part that we defined in our code
+						<img src="../Advanced-CSS-and-SASS/images/nexter/advanced-css-grids-2.jpg" alt="" class="img-size">
+						2. implicit - those tracks or blocks that we did not defined in our code
 						<code>
-							
+							 property for designing implicit grids
+.parent{ 
+	grid-auto-rows
+}
+
 						</code>
+
+<code>
+	.container {
+		width: 1000px;
+		margin: 30px auto;
+		background-color: #ddd;
+	
+		display: grid;
+		grid-template-columns:repeat(2, 1fr);
+		grid-template-rows:repeat(2, 150px);
+		grid-gap: 30px;
+	
+		// implicit designing 
+		//height of 80px 
+		grid-auto-rows: 80px;
+	
+		//defualt value - row;
+		//now the remaining items now are no longer
+		//added as rows but as columns
+		//because we told out grid to flow as columns
+		grid-auto-flow: column;
+	
+		//now if we added more and more grid items
+		// then we add it as new columns  
+		// if we can style the rows that are automatically added
+		// we can do the same for the columns
+		grid-auto-columns: .5fr;
+		//the advantage daw is to control when we still dont know
+		//how many will load 
+	
+		.item {
+			padding: 20px;
+			color: #fff;
+			font-family: serif;
+			font-size: 30px;
+			background-color: #232;
+		}
+	}
+</code>
 					</pre>
+				</div>
+
+				<h3>f8v101 Aligning Grid Items</h3>
+				<div>
+					[align-item] default value is stretch
+					<pre>
+						without [align items: center]
+					</pre
+					>
+					<img
+						src="../Advanced-CSS-and-SASS/images/nexter/advanced-css-grids-3.jpg"
+						alt=""
+						class="img-size"
+					/>
+					<pre>
+	with [align items: center]
+
+</pre>
+					<img
+						src="../Advanced-CSS-and-SASS/images/nexter/advanced-css-grids-4.jpg"
+						alt=""
+						class="img-size"
+					/>
+					<pre></pre>
+				</div>
+
+				<h3>f8v102 Aligning Tracks</h3>
+				<div>
+					<pre><code>
+						/* ------------------------------------- */
+	/* ALIGN TO GRID TRACKS TO GRID CONTAINER */
+	/* ------------------------------------- */
+
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(2, 200px);
+	height: 1000px;
+
+
+	//just like centering flex items
+	//will center the child in the container
+
+	justify-content: center; //center / start / end / space-between /space-around / space-evenly
+	align-content: center;
+
+
+	//-items - is for individual items 
+	align-item:
+	justify-items:
+	
+	//-content: means is to align the entire tracks
+	justify-content:
+	align-content:
+					</code></pre>
 				</div>
 			</section>
 		</main>

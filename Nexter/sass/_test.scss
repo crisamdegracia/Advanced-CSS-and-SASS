@@ -71,7 +71,7 @@
 
  */
 
-// Method 1 
+// Method 1
 /* Line numbers
 
 .challenge {
@@ -111,8 +111,6 @@
 }
 
 */
-
-
 
 // Method 2
 // Line names
@@ -155,7 +153,6 @@
 
 // Method 3: Name Grid Areas
 
-
 // .challenge {
 // 	width: 1000px;
 // 	margin: 30px auto;
@@ -175,8 +172,7 @@
 // 		color: #fff;
 // 		font-size: 30px;
 // 		font-family: sans-serif;
-// 	} 
-	
+// 	}
 
 // .header {
 // 	grid-area: head;
@@ -194,8 +190,6 @@
 // }
 // }
 
-
-
 //F8V100
 //100 Implicit Grids vs. Explicit Grids
 
@@ -204,14 +198,77 @@
 	margin: 30px auto;
 	background-color: #ddd;
 
+	display: grid;
+	// grid-template-rows:repeat(2, 150px);
+	// grid-template-columns:repeat(2, 1fr);
+	grid-gap: 30px;
+
+	// implicit designing
+	//height of 80px
+	grid-auto-rows: 80px;
+
+	//defualt value - row;
+	//now the remaining items now are no longer
+	//added as rows but as columns
+	//because we told out grid to flow as columns
+	// grid-auto-flow: column;
+	grid-auto-flow: row  dense;
+
+	//now if we added more and more grid items
+	// then we add it as new columns
+	// if we can style the rows that are automatically added
+	// we can do the same for the columns
+	grid-auto-columns: 0.5fr;
+	//the advantage daw is to control when we still dont know
+	//how many will load
+
+	/* ------------------------------------- */
+	/* ALIGN TO GRID ITEMS TO GRID AREAS */
+	/* ------------------------------------- */
+	// align-items: center; //default value Stretch other - center / end / start
+
+	// justify-items: center;//default value Stretch other - center / end / start
+	/* ----------------------------------------------- */
+	/* ----------------------------------------------- */
+
+	/* ------------------------------------- */
+	/* ALIGN TO GRID TRACKS TO GRID CONTAINER */
+	/* ------------------------------------- */
+
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(2, 200px);
+	height: 1000px;
+
+
+	//just like centering flex items
+	// will center the child in the container
+
+	justify-content: center; //center / start / end / space-between /space-around / space-evenly
+	align-content: center;
+
+
+	
 	.item {
 		padding: 20px;
 		color: #fff;
 		font-family: serif;
 		font-size: 30px;
 		background-color: #232;
+
+		&--4 {
+			background-color: crimson;
+			grid-row: 2 / span 3;
+
+			// align-self: start;
+			// justify-self: start;
+		}
+		&--6 {
+			background-color: red;
+			grid-row: 2 / span 2;
+		}
+		&--7 {
+			background-color: palevioletred;
+			grid-column: 1 / -1;
+		}
 	}
 }
-
-
-
