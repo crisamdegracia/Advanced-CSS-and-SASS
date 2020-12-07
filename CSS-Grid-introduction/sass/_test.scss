@@ -298,10 +298,12 @@
 // 	grid-template-columns:minmax(200px, 1fr) repeat(3, 1fr);
 // -----------------------------------------------
 //v104 
-
+	width: 90%;
 	grid-template-rows: repeat(2, minmax(150px, min-content));
 
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));	
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));	
+
+
 	.item {
 		padding: 20px;
 		color: #fff;
