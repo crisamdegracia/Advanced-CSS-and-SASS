@@ -88,7 +88,7 @@
 		font-family: sans-serif;
 	} 
 	
-
+}
 .header {
 	grid-column: 1 / -1;
 }
@@ -106,7 +106,7 @@
 	grid-row: 4 / span 4;
 
 }
-}
+
 
 */
 /* 
@@ -126,7 +126,7 @@
 		font-family: sans-serif;
 	} 
 	
-
+}
 .header {
 	grid-column: col-start 1 / grid-end;
 }
@@ -143,42 +143,34 @@
 	grid-column: col-start  1 / grid-end;
 
 }
-}
+
  */
 .container {
   width: 1000px;
   margin: 30px auto;
   background-color: #ddd;
   display: grid;
-  grid-gap: 30px;
-  grid-auto-rows: 80px;
-  grid-auto-flow: row  dense;
-  grid-auto-columns: 0.5fr;
-  /* ------------------------------------- */
-  /* ALIGN TO GRID ITEMS TO GRID AREAS */
-  /* ------------------------------------- */
-  /* ----------------------------------------------- */
-  /* ----------------------------------------------- */
-  /* ------------------------------------- */
-  /* ALIGN TO GRID TRACKS TO GRID CONTAINER */
-  /* ------------------------------------- */
-  grid-template-rows: repeat(2, 100px);
-  grid-template-columns: repeat(2, 200px);
-  height: 1000px;
-  justify-content: center;
-  align-content: center; }
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
   .container .item {
     padding: 20px;
     color: #fff;
     font-family: serif;
     font-size: 30px;
     background-color: #232; }
+    .container .item--1 {
+      background-color: red; }
+    .container .item--2 {
+      background-color: yellowgreen; }
+    .container .item--3 {
+      background-color: violet; }
     .container .item--4 {
-      background-color: crimson;
-      grid-row: 2 / span 3; }
+      background-color: palevioletred; }
+    .container .item--5 {
+      background-color: royalblue; }
     .container .item--6 {
-      background-color: red;
-      grid-row: 2 / span 2; }
+      background-color: goldenrod; }
     .container .item--7 {
-      background-color: palevioletred;
-      grid-column: 1 / -1; }
+      background-color: crimson; }
+    .container .item--8 {
+      background-color: darksalmon; }

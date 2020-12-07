@@ -90,7 +90,7 @@
 		font-family: sans-serif;
 	} 
 	
-
+}
 .header {
 	grid-column: 1 / -1;
 }
@@ -108,7 +108,7 @@
 	grid-row: 4 / span 4;
 
 }
-}
+
 
 */
 
@@ -131,7 +131,7 @@
 		font-family: sans-serif;
 	} 
 	
-
+}
 .header {
 	grid-column: col-start 1 / grid-end;
 }
@@ -148,7 +148,7 @@
 	grid-column: col-start  1 / grid-end;
 
 }
-}
+
  */
 
 // Method 3: Name Grid Areas
@@ -173,7 +173,7 @@
 // 		font-size: 30px;
 // 		font-family: sans-serif;
 // 	}
-
+// }
 // .header {
 // 	grid-area: head;
 // }
@@ -188,10 +188,88 @@
 // .footer {
 // grid-area: foot;
 // }
-// }
 
-//F8V100
+//-------------------F8V100-------------------//
+//-------------------F8V100-------------------//
+//-------------------F8V100-------------------//
 //100 Implicit Grids vs. Explicit Grids
+
+// .container {
+// 	width: 1000px;
+// 	margin: 30px auto;
+// 	background-color: #ddd;
+
+	// display: grid;
+	// // grid-template-rows:repeat(2, 150px);
+	// // grid-template-columns:repeat(2, 1fr);
+	// grid-gap: 30px;
+
+	// // implicit designing
+	// //height of 80px
+	// grid-auto-rows: 80px;
+
+	// //defualt value - row;
+	// //now the remaining items now are no longer
+	// //added as rows but as columns
+	// //because we told out grid to flow as columns
+	// // grid-auto-flow: column;
+	// grid-auto-flow: row  dense;
+
+	// //now if we added more and more grid items
+	// // then we add it as new columns
+	// // if we can style the rows that are automatically added
+	// // we can do the same for the columns
+	// grid-auto-columns: 0.5fr;
+	// //the advantage daw is to control when we still dont know
+	// //how many will load
+
+	// /* ------------------------------------- */
+	// /* ALIGN TO GRID ITEMS TO GRID AREAS */
+	// /* ------------------------------------- */
+	// // align-items: center; //default value Stretch other - center / end / start
+
+	// // justify-items: center;//default value Stretch other - center / end / start
+	// /* ----------------------------------------------- */
+	// /* ----------------------------------------------- */
+
+	// /* ------------------------------------- */
+	// /* ALIGN TO GRID TRACKS TO GRID CONTAINER */
+	// /* ------------------------------------- */
+
+	// grid-template-rows: repeat(2, 100px);
+	// grid-template-columns: repeat(2, 200px);
+	// height: 1000px;
+
+	// //just like centering flex items
+	// // will center the child in the container
+
+	// justify-content: center; //center / start / end / space-between /space-around / space-evenly
+	// align-content: center;
+
+	// .item {
+	// 	padding: 20px;
+	// 	color: #fff;
+	// 	font-family: serif;
+	// 	font-size: 30px;
+	// 	background-color: #232;
+
+		// &--4 {
+		// 	background-color: crimson;
+		// 	grid-row: 2 / span 3;
+
+		// 	// align-self: start;
+		// 	// justify-self: start;
+		// }
+		// &--6 {
+		// 	background-color: red;
+		// 	grid-row: 2 / span 2;
+		// }
+		// &--7 {
+		// 	background-color: palevioletred;
+		// 	grid-column: 1 / -1;
+		// }
+// 	}
+// }
 
 .container {
 	width: 1000px;
@@ -199,55 +277,31 @@
 	background-color: #ddd;
 
 	display: grid;
-	// grid-template-rows:repeat(2, 150px);
-	// grid-template-columns:repeat(2, 1fr);
-	grid-gap: 30px;
 
-	// implicit designing
-	//height of 80px
-	grid-auto-rows: 80px;
-
-	//defualt value - row;
-	//now the remaining items now are no longer
-	//added as rows but as columns
-	//because we told out grid to flow as columns
-	// grid-auto-flow: column;
-	grid-auto-flow: row  dense;
-
-	//now if we added more and more grid items
-	// then we add it as new columns
-	// if we can style the rows that are automatically added
-	// we can do the same for the columns
-	grid-auto-columns: 0.5fr;
-	//the advantage daw is to control when we still dont know
-	//how many will load
-
-	/* ------------------------------------- */
-	/* ALIGN TO GRID ITEMS TO GRID AREAS */
-	/* ------------------------------------- */
-	// align-items: center; //default value Stretch other - center / end / start
-
-	// justify-items: center;//default value Stretch other - center / end / start
-	/* ----------------------------------------------- */
-	/* ----------------------------------------------- */
-
-	/* ------------------------------------- */
-	/* ALIGN TO GRID TRACKS TO GRID CONTAINER */
-	/* ------------------------------------- */
-
-	grid-template-rows: repeat(2, 100px);
-	grid-template-columns: repeat(2, 200px);
-	height: 1000px;
+	// ---------------------------------------
+	//video103 v103
+// 	// grid-template-rows: repeat(2, 150px);
+// // width: 90%;
+// 	// min-content - using just the minimum space needed
+// 	// max content - using the max or expanded space when adding more content
+// 	// grid-template-columns: min-content 1fr;
 
 
-	//just like centering flex items
-	// will center the child in the container
+// 	// grid-template-rows:repeat(2, minmax(150px, min-content)) ;
+// 	// grid-template-columns: minmax(10px, 300px) repeat( 3, 1fr);
+// 	// grid-template-columns: repeat(2, 150px) min-content 1fr;
+// 	width: 90%;
 
-	justify-content: center; //center / start / end / space-between /space-around / space-evenly
-	align-content: center;
 
+// 	//4colums - 1st minimum 200px max 300px
+// 	//other 3 columns 1 fractional unit each
+// 	grid-template-columns:minmax(200px, 1fr) repeat(3, 1fr);
+// -----------------------------------------------
+//v104 
 
-	
+	grid-template-rows: repeat(2, minmax(150px, min-content));
+
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));	
 	.item {
 		padding: 20px;
 		color: #fff;
@@ -255,20 +309,13 @@
 		font-size: 30px;
 		background-color: #232;
 
-		&--4 {
-			background-color: crimson;
-			grid-row: 2 / span 3;
-
-			// align-self: start;
-			// justify-self: start;
-		}
-		&--6 {
-			background-color: red;
-			grid-row: 2 / span 2;
-		}
-		&--7 {
-			background-color: palevioletred;
-			grid-column: 1 / -1;
-		}
+		&--1 {background-color: red ;}
+		&--2 {background-color:yellowgreen ;}
+		&--3 {background-color: violet;}
+		&--4 {background-color: palevioletred;} 
+		&--5 {background-color: royalblue;}
+		&--6 {background-color: goldenrod;}
+		&--7 {background-color: crimson;}
+		&--8 {background-color: darksalmon;}
 	}
 }

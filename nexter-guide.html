@@ -32,7 +32,24 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 			<section class="section--right-panel mt-40" id="accordion">
 				<h3>Tricks</h3>
 				<div>
-					to center vertically and horizontally using grid
+					<h5>Items & Content - usage</h5>
+					<pre><code>
+
+	on parent block
+	//-items - is for individual items 
+	// align - mean for vertical direction or column axis
+				- align-items & align-content
+	// justify - means for horizontal direction, row axis	
+			- justify-content & justify-items;
+	align-item:
+	justify-items:
+	
+	//-content: means is to align the entire tracks
+	justify-content:
+	align-content:
+					</code></pre>
+
+					<h5>To center vertically and horizontally using grid</h5>
 					<pre><code>
 	align-items: center; //default value Stretch other - center / end / start
 	justify-items: center;//default value Stretch other - center / end / start
@@ -55,7 +72,7 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 						</code></pre>
 					</pre>
 
-						<pre>
+					<pre>
 							<code>
 								
 	on parent block
@@ -82,6 +99,26 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 							background-color: red;
 							grid-row: 2 / span 2;
 						}
+
+					</code></pre>
+
+					<h5>Max-content</h5>
+					- when we add content in the items it will expand - its
+					maximizing the content space -
+					<pre><code>
+	display: grid;
+	grid-template-rows: repeat(2, 150px);
+	grid-template-columns: max-content 1fr 1fr max-content;
+
+					</code></pre>
+
+					<h5>Min-content</h5>
+					- when we add content in the items it will expand - its
+					maximizing the content space -
+					<pre><code>
+	display: grid;
+	grid-template-rows: repeat(2, 150px);
+	grid-template-columns: max-content 1fr 1fr max-content;
 
 					</code></pre>
 				</div>
@@ -459,13 +496,291 @@ dapat daw my diferent names.
 					<pre>
 	with [align items: center]
 
-</pre>
+</pre
+					>
 					<img
 						src="../Advanced-CSS-and-SASS/images/nexter/advanced-css-grids-4.jpg"
 						alt=""
 						class="img-size"
 					/>
-					<pre></pre>
+					<pre><code>
+
+/* .container {
+	background-color: #eee;
+	width: 1000px;
+	margin: 30px auto;
+	padding: 30px 20px;
+
+	// start to use grid
+	display: grid;
+
+	// 1st value - 1st row  | 2nd value and row
+	grid-template-rows: repeat(2, 150px);
+
+	// all spaces are devided then assigned the spaces
+	grid-template-columns: 1fr 2fr 1fr;
+
+	// different gap for row and column
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+
+	//both column and row gap - same px
+	grid-gap: 30px;
+}
+.item {
+	padding: 20px;
+	font-size: 30px;
+	font-family: serif;
+	color: #fff;
+}
+
+.item--6 {
+	background-color: orangered;
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+
+}
+
+
+.item--1 {
+	background-color: green;
+	// grid-row-start: 2;
+	// grid-row-end: 3;
+	// grid-column-start: 2;
+	// grid-column-end: 3;
+
+	// shorthand
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+
+}
+.item--2 {
+	background-color: violet;
+}
+.item--3 {
+	background-color: pink;
+}
+.item--4 {
+	background-color: blue;
+}
+.item--5 {
+	background-color: brown; 
+
+	// grid-row: 1 / 2;
+	// grid-column: 3 / 4;
+	
+	//1st row line where to start
+	//2nd  column number to start
+	//3rd row line to end
+	//4th column line to end
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+	*/
+
+// Method 1
+/* Line numbers
+
+.challenge {
+	width: 1000px;
+	margin: 30px auto;
+
+	display: grid;
+	grid-template-rows: 100px 200px 400px 100px;
+	grid-template-columns: repeat(3, 1fr) 200px;
+	grid-gap: 30px;
+	& > * {
+		background-color:#231;
+		padding: 20px;
+		color: #fff;
+		font-size: 30px;
+		font-family: sans-serif;
+	} 
+	
+
+.header {
+	grid-column: 1 / -1;
+}
+
+.sidebar {
+	grid-column: 4 / 5;
+	grid-row: 2 / span 2 ;
+}
+
+.main-content {
+	grid-column: 1 / span 3;
+}
+.footer {
+	grid-column: 1 / -1;
+	grid-row: 4 / span 4;
+
+}
+}
+
+*/
+
+// Method 2
+// Line names
+/* 
+.challenge {
+	width: 1000px;
+	margin: 30px auto;
+
+	display: grid;
+	grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
+	grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end];
+	grid-gap: 30px;
+	& > * {
+		background-color:#231;
+		padding: 20px;
+		color: #fff;
+		font-size: 30px;
+		font-family: sans-serif;
+	} 
+	
+
+.header {
+	grid-column: col-start 1 / grid-end;
+}
+
+.sidebar {
+	grid-column: col-end 3 / grid-end;
+	grid-row: box-start / main-end  ;
+}
+
+.main-content {
+	grid-column:col-start 1 / col-end 3;
+}
+.footer {
+	grid-column: col-start  1 / grid-end;
+
+}
+}
+	*/
+
+// Method 3: Name Grid Areas
+
+// .challenge {
+// 	width: 1000px;
+// 	margin: 30px auto;
+
+// 	display: grid;
+// 	grid-template-rows: 100px 200px 400px 100px;
+// 	grid-template-columns: repeat(3, 1fr) 200px;
+// 	grid-gap: 30px;
+
+// 	grid-template-areas: "head head head head"
+// 						 "box box box side"
+// 						 "main main main side"
+// 						 "foot foot foot foot";
+// 	& > * {
+// 		background-color:#231;
+// 		padding: 20px;
+// 		color: #fff;
+// 		font-size: 30px;
+// 		font-family: sans-serif;
+// 	}
+
+// .header {
+// 	grid-area: head;
+// }
+
+// .sidebar {
+// 	grid-area: side;
+// }
+
+// .main-content {
+//  grid-area: main;
+// }
+// .footer {
+// grid-area: foot;
+// }
+// }
+
+//F8V100
+//100 Implicit Grids vs. Explicit Grids
+
+.container {
+	width: 1000px;
+	margin: 30px auto;
+	background-color: #ddd;
+
+	display: grid;
+	// grid-template-rows:repeat(2, 150px);
+	// grid-template-columns:repeat(2, 1fr);
+	grid-gap: 30px;
+
+	// implicit designing
+	//height of 80px
+	grid-auto-rows: 80px;
+
+	//defualt value - row;
+	//now the remaining items now are no longer
+	//added as rows but as columns
+	//because we told out grid to flow as columns
+	// grid-auto-flow: column;
+	grid-auto-flow: row  dense;
+
+	//now if we added more and more grid items
+	// then we add it as new columns
+	// if we can style the rows that are automatically added
+	// we can do the same for the columns
+	grid-auto-columns: 0.5fr;
+	//the advantage daw is to control when we still dont know
+	//how many will load
+
+	/* ------------------------------------- */
+	/* ALIGN TO GRID ITEMS TO GRID AREAS */
+	/* ------------------------------------- */
+	// align-items: center; //default value Stretch other - center / end / start
+
+	// justify-items: center;//default value Stretch other - center / end / start
+	/* ----------------------------------------------- */
+	/* ----------------------------------------------- */
+
+	/* ------------------------------------- */
+	/* ALIGN TO GRID TRACKS TO GRID CONTAINER */
+	/* ------------------------------------- */
+
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(2, 200px);
+	height: 1000px;
+
+
+	//just like centering flex items
+	// will center the child in the container
+
+	justify-content: center; //center / start / end / space-between /space-around / space-evenly
+	align-content: center;
+
+
+	
+	.item {
+		padding: 20px;
+		color: #fff;
+		font-family: serif;
+		font-size: 30px;
+		background-color: #232;
+
+		&--4 {
+			background-color: crimson;
+			grid-row: 2 / span 3;
+
+			// align-self: start;
+			// justify-self: start;
+		}
+		&--6 {
+			background-color: red;
+			grid-row: 2 / span 2;
+		}
+		&--7 {
+			background-color: palevioletred;
+			grid-column: 1 / -1;
+		}
+	}
+}
+
+					</code></pre>
 				</div>
 
 				<h3>f8v102 Aligning Tracks</h3>
@@ -496,6 +811,103 @@ dapat daw my diferent names.
 	align-content:
 					</code></pre>
 				</div>
+				<h3>
+					f8v103 Using min-content max-content and the minmax()
+					function
+				</h3>
+				<div>
+					<pre><code>
+
+// min-content - using just the minimum space needed 
+			   - put in main container 
+			   - parang per word 
+			   - will give effect on child of container
+// max content - using the max or expanded space when adding more content
+			   - put in main container 
+			   - will give effect on child of container
+
+-------------------------------------
+//columns for width
+//4 columns - 1st size max-content, 2nd size 1fr, 3rd size 1fr
+//4th size  - min content  			   
+grid-template-columns: max-content 1fr 1fr min-content ;
+-------------------------------------
+// row for height
+//2 rows with minimum spacing size--height
+grid-template-rows: repeat(2, min-content); 
+
+-------------------------------------
+//the 1st row of the grid na merong overflow na content
+//will be hidden, because 150px lang ung height 
+// so to fix this		   
+grid-template-row: 150px min-content;
+/*
+  it says repeat 2 rows with the size 
+  of minimum(but max) 150px - then the min-content description
+  above
+*/
+grid-template-row: repeat(2, minmax(150px, min-content) ;
+
+minmax() - to pass 2 values - then the CSS will make sure
+		- that the tracks stay between these two values
+-------------------------------------
+//always between 200px and 300px
+
+grid-template-columns: minmax(200px,300px);
+-------------------------------------
+//4colums - 1st minimum 200px max 300px
+//other 3 columns 1 fractional unit each
+grid-template-columns:minmax(200px, 300px) repeat(3, 1fr);
+//same scenario different size
+//50% size of the main container
+//if 50% is not true 200px will.
+grid-template-columns:minmax(200px, 50%) repeat(3, 1fr);
+//same approach
+grid-template-columns:minmax(200px, 1fr) repeat(3, 1fr);
+-------------------------------------
+width: 90%;
+grid-template-rows:repeat(2, minmax(150px, min-content));
+
+//minimum size 200px, maxsize 1fr,the other 3 repeat 3 times
+//Problem when minimizing 
+		  - the last column will be bigger than 2nd and 4th column
+					- even we tell it to be all 1fr, they must be all the same, thats the problem
+		  - this will occur to above code also
+//explain - The CSS Grid specification says that a fractional unit
+		 - fills up the entire remaining space but it is never smaller
+		 - than the minimum content of a row or a column
+		 - ahhh kasi ung word nya mahaba! or maybe the content.
+grid-template-columns:minmax(200px, 1fr) repeat(3, 1fr);
+-------------------------------------
+
+				</code></pre>
+				</div>
+
+
+				<h3>f8v104 Responsive Layouts with auto-fit and auto-fill</h3>
+<div>
+	<pre>
+		<code>
+width: 1000px;
+
+// auto-fill
+//it will create 10 columns or tracks, why 10? because of the width 1000px/100px
+// those 2 other tracks is empty but with width while auto-fit doesnt give wdith
+grid-template-columns: repeat(auto-fill, 100px);	
+
+//auto-fit
+// it still create 10 columns or tracks - you will see it in FireFox grid numbering
+// auto-fit does is collapse the other tracks and give them zero width
+// will create 8 columns or tracks
+grid-template-columns: repeat(auto-fit, 100px);	
+
+-------------------------------------
+// 
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr);	
+		</code>
+	</pre>
+</div>
+			
 			</section>
 		</main>
 	</body>
