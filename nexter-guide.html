@@ -34,7 +34,96 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 			<div>
 				
 			</div>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt hic, dolorum laboriosam nisi error quo obcaecati eum ab, quis ipsam iste illo aut officiis. Odio quia provident architecto eaque explicabo.
+				<h3>f9v107 Building the Overall Layout - Part 1</h3>
+				<div>
+					<h5>Simple starting point</h5>
+					<pre><code>
+.container {
+	display: grid;
+
+
+	// use this to adapt the responsiveness and shorter codes
+	// 6 rows - 1st = 80vh, 2nd = overall height of content.
+	// 3rd = view weight height, 4th,5th,6th = over all height of content
+	// 
+	grid-template-rows: 80vh min-content;
+}
+					</code></pre>
+				</div>
+				<h3>f9v108 Building the Overall Layout - Part 2</h3>
+				<div>
+					<pre><code>
+
+// will create 8 same size columns! COOLEST!
+grid-template-columns: repeat(8, 1fr);
+</code></pre>
+
+<pre><code>
+//repeat 8 columns, with minimum width na kasing size ng content
+- tapos max size na 14rem o 140px 
+grid-template-columns: repeat(8, minmax(min-content, 14rem));
+</code></pre>
+
+<h5> Setting up the layout in main-container </h5>
+<pre><code>
+	display: grid;
+
+    //6 rows
+    grid-template-rows:80vh min-content 40vw repeat(3, min-content);
+
+    // grid line can have multiple names
+    // full-start - start of ful bleed section
+    // center-start - the beginning of our 8 columns, so this is the part that stays in the middle
+    //col-start - starts in column 1, like col-1, col-2, col-3 etc
+    grid-template-columns:[sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-star] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+
+</code></pre>
+
+
+<pre><code>
+.sidebar {
+	background-color: $color-primary;
+
+	//this name was set in grid-templates-columns
+	// size of 8rem
+	grid-column: sidebar-start / sidebar-end;
+
+	//start at 1st row / to last
+	grid-row: 1 / -1;
+}-----------------------------------------
+.features {
+	background-color: $color-grey-light-2;
+	grid-column: center-start / center-end;
+
+} -----------------------------------------
+.gallery {
+	background-color: $color-grey-dark-1;
+	grid-column: full-start / full-end;
+
+}
+-----------------------------------------
+// column size we set in container class
+.footer {
+	background-color: $color-secondary;
+	grid-column: full-start / full-end;
+} -----------------------------------------
+.homes {
+	background-color: $color-secondary;
+	// column size we set in container class
+	grid-column: center-start / center-end;
+}
+
+</code></pre>
+</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			</section>
 		</main>
 	</body>

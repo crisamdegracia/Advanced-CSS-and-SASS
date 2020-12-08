@@ -1,0 +1,17 @@
+.story {
+
+	&__pictures {
+		background-color: $color-primary;
+
+		//check the grid-template-columns to understand
+		grid-column: full-start / col-end 4;
+	}
+
+	&__content {
+		background-color: $color-grey-light-2;
+
+		// &__picture grid-column code are connected here
+		// from 8 column, we start at 5 and end at last column
+		grid-column: col-start 5 / full-end;
+	}
+}

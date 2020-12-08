@@ -1,0 +1,8 @@
+.realtors {
+	background-color: $color-secondary;
+
+
+	// col-start 7 - because at the .header we set full-start
+	// and col-end 6
+	grid-column: col-start 7 / full-end;
+}

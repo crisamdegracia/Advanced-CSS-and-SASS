@@ -1,0 +1,9 @@
+.header {
+	background-color: $color-grey-dark-1;
+
+
+	// col-end 6, it will end in the 6th column
+	// because there are 8 columns
+	// check the grid-template-column for reference
+	grid-column: full-start / col-end 6;
+}

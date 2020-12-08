@@ -1,0 +1,10 @@
+.sidebar {
+	background-color: $color-primary;
+
+	//this name was set in grid-templates-columns
+	// size of 8rem
+	grid-column: sidebar-start / sidebar-end;
+
+	//start at 1st row / to last
+	grid-row: 1 / -1;
+}
