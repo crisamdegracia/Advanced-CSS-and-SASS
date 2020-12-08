@@ -43,8 +43,8 @@ body {
     // full-start - start of ful bleed section
     // center-start - the beginning of our 8 columns, so this is the part that stays in the middle
     //col-start - starts in column 1, like col-1, col-2, col-3 etc
+    // minmax() - width will not be less than 6rem and 1fractional unit
     grid-template-columns:[sidebar-start] 8rem [sidebar-end full-start] minmax( 6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
-
 
 
 
