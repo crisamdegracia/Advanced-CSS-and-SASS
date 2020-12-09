@@ -32,7 +32,10 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 			<section class="section--right-panel mt-40" id="accordion">
 			<h3>Tricks</h3>
 			<div>
-				
+				aign-items: align grid items to their grid cells in the column
+				<pre>
+It is not neccessary to define the grid-template-rows:
+				</pre>
 			</div>
 				<h3>f9v107 Building the Overall Layout - Part 1</h3>
 				<div>
@@ -118,46 +121,89 @@ grid-template-columns: repeat(8, minmax(min-content, 14rem));
 			
 			<h3>f9109 - 110 Building the Features Section - Part 1 and part 2</h3>
 			<div>
-				<h5>How and why to create grids inside of grids</h5>
+<h5>How and why to create grids inside of grids</h5>
 				<pre><code>
 
 				</code></pre>
 
-				<h5>How to create a responsive component
-					without medai querries
-				</h5>
+<h5>How to create a responsive component
+	without media querries
+</h5>
 				<pre><code>
-
+display: grid;
+grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
+				
 				</code></pre>
 
-				<h5> How to build a small component using CSS Grids</h5>
-			<h5> Modifying the Google Font then reuse them</h5>
+<h5> How to build a small component using CSS Grids</h5>
+<h5> Modifying the Google Font then reuse them</h5>
 			<pre> <code>
-				%heading {
-					font-family: $font-display;
-					font-weight: 400;
-				}
-				
-				.heading-1 {
-					@extend %heading;
-				}
-				.heading-2 {
-					@extend %heading;
-				}
-				.heading-3 {
-					@extend %heading;
-				}
-				.heading-4 {
-					@extend %heading;
-				}
-				
+%heading {
+	font-family: $font-display;
+	font-weight: 400;
+}
+
+.heading-1 {
+	@extend %heading;
+}
+.heading-2 {
+	@extend %heading;
+}
+.heading-3 {
+	@extend %heading;
+}
+.heading-4 {
+	@extend %heading;
+}
+
+			</code></pre>
+
+			<h5> Responsive without media querries</h5>
+			<pre><code>
+on main container
+display: grid;
+grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
+			
 			</code></pre>
 			</div>
 			
+		<h3>f9v111 Building the Story Section - Part 1</h3>	
+			<div>
+				<h5>How to deal with overlapping grid items</h5>
+				<pre><code>
+
+				</code></pre>
+				<H5>Why images are special and behave differently than other grid items;</H5>
+				meron daw silang intrinsince ration associate with them
+				<pre><code>
+
+				</code></pre>
+				<h5>How to decide if flexbox is a better tool in certain
+					situations.
+				</h5>
+
+				<pre><code>
+&__content {
+	background-color: $color-grey-light-1;
+
+	// &__picture grid-column code are connected here
+	// from 8 column, we start at 5 and end at last column
+	grid-column: col-start 5 / full-end;
+
+
+	padding: 6rem 12rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+				</code></pre>
+
+
+			</div>
 			
-			
-			
-			
+			<h3>F9v115!!!</h3>
 			
 			</section>
 		</main>
