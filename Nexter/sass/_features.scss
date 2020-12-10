@@ -5,16 +5,23 @@
 
 	display: grid;
 	// grid-template-columns: repeat(3, 1fr);
+
+	// 3 auto fit columns with minimum 25rem, and maximum 1fr.
 	grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 
 	grid-gap: 6rem;
-	align-items: start;
 
+	// ung mga boxes will start on top so pag end iilalim sya
+	// think of it as rubix front side.
+	align-items: start;
+	
 
 }
 
 .feature {
 
+	// grid inside grid
+	
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	grid-gap: 2rem;
@@ -25,9 +32,11 @@
 	width: 4.5rem;
 	height: 4.5rem;
 	grid-row: 1 / span 2;
+	
 }
 
 &__text {
+	
 	font-size: 1.7rem;
  }
 }

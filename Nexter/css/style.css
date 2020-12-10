@@ -189,8 +189,7 @@ body {
     padding: 1.25rem;
     background-color: #101d2c;
     color: #fff;
-    font-weight: 400;
-    transform: translateY(50%); }
+    font-weight: 400; }
   .home__location, .home__rooms {
     margin-top: 2.5rem; }
   .home__location, .home__rooms, .home__area, .home__price {
@@ -204,11 +203,18 @@ body {
       width: 2rem;
       margin-right: 1rem; }
   .home__btn {
-    grid-column: 1 / -1; }
+    grid-column: 1 / -1;
+    justify-self: center; }
 
 .gallery {
   background-color: #54483A;
-  grid-column: full-start / full-end; }
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+  grid-gap: 2rem; }
+  .gallery > * {
+    width: 100%; }
 
 .footer {
   background-color: #101d2c;
