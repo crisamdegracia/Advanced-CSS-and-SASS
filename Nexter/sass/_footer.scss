@@ -1,7 +1,29 @@
 .footer {
 	background-color: $color-secondary;
-
-
-	
 	grid-column: full-start / full-end;
+
+	.nav {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		padding: 3rem;
+		font-size: 1.5rem;
+		font-family: $font-display;
+		text-transform: uppercase;
+		
+		&__item {
+			
+		}
+
+
+		// &__link:active,
+		&__link {
+color: aliceblue;
+			text-decoration: none;
+		}
+	}
+
+	.copyright {
+		justify-self: center;
+	}
 }
