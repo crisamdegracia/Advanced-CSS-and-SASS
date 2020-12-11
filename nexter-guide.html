@@ -30,25 +30,33 @@ Advanced CSS and SASS by: Jonas Schedtmann</pre
 
 		<main class="custom__container">
 			<section class="section--right-panel mt-40" id="accordion">
-			<h3>Tricks</h3>
-			<div>
-				<h5>Overkill Emmet Tricks</h5>
-			<pre><code>
+				<h3>Tricks</h3>
+				<div>
+					<h5>Overkill Emmet Tricks</h5>
+					<pre><code>
 				(figure.gallery__item.gallery__item--$>img.gallery__img[src="img/gal-$"][alt="Gallery image $"])*14
 			</code></pre>
-	
-	
-				<h5>Centering items inside grid</h5>
-				<pre><code>
+
+					<h5>Centering items inside grid</h5>
+					<pre><code>
 grid-column: 1 / -1 ;
 justify-self: center;
 				</code></pre>
 
-				aign-items: align grid items to their grid cells in the column
-				<pre>
+					<h5>Align-items:</h5>
+					<pre><code>
+aign-items: align grid items to their grid cells in the column
+</code></pre>
+<h5>Center item un Flexbox</h5>
+<pre><code>
+	display: flex;
+	justify-content: center;
+</code></pre>
+					<pre>
 It is not neccessary to define the grid-template-rows:
-				</pre>
-			</div>
+				</pre
+					>
+				</div>
 				<h3>f9v107 Building the Overall Layout - Part 1</h3>
 				<div>
 					<h5>Simple starting point</h5>
@@ -64,9 +72,9 @@ It is not neccessary to define the grid-template-rows:
 	grid-template-rows: 80vh min-content;
 }
 					</code></pre>
-				</div>
-				<h5>Positioning object without position:absolute</h5>
-				<pre><code>
+
+					<h5>Positioning object without position:absolute</h5>
+					<pre><code>
 
 //placing heart icon in the top right
 // 1st grid-row: 1 / 2 - place it 1st on 1st row
@@ -84,7 +92,7 @@ It is not neccessary to define the grid-template-rows:
 }
 
 				</code></pre>
-			</div>
+				</div>
 				<h3>f9v108 Building the Overall Layout - Part 2</h3>
 				<div>
 					<pre><code>
@@ -93,14 +101,14 @@ It is not neccessary to define the grid-template-rows:
 grid-template-columns: repeat(8, 1fr);
 </code></pre>
 
-<pre><code>
+					<pre><code>
 //repeat 8 columns, with minimum width na kasing size ng content
 - tapos max size na 14rem o 140px 
 grid-template-columns: repeat(8, minmax(min-content, 14rem));
 </code></pre>
 
-<h5> Setting up the layout in main-container </h5>
-<pre><code>
+					<h5>Setting up the layout in main-container</h5>
+					<pre><code>
 	display: grid;
 
     //6 rows
@@ -114,8 +122,7 @@ grid-template-columns: repeat(8, minmax(min-content, 14rem));
 
 </code></pre>
 
-
-<pre><code>
+					<pre><code>
 .sidebar {
 	background-color: $color-primary;
 
@@ -149,27 +156,31 @@ grid-template-columns: repeat(8, minmax(min-content, 14rem));
 }
 
 </code></pre>
-</div>
-			
-			<h3>f9109 - 110 Building the Features Section - Part 1 and part 2</h3>
-			<div>
-<h5>How and why to create grids inside of grids</h5>
-				<pre><code>
+				</div>
+
+				<h3>
+					f9109 - 110 Building the Features Section - Part 1 and part
+					2
+				</h3>
+				<div>
+					<h5>How and why to create grids inside of grids</h5>
+					<pre><code>
 
 				</code></pre>
 
-<h5>How to create a responsive component
-	without media querries
-</h5>
-				<pre><code>
+					<h5>
+						How to create a responsive component without media
+						querries
+					</h5>
+					<pre><code>
 display: grid;
 grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 				
 				</code></pre>
 
-<h5> How to build a small component using CSS Grids</h5>
-<h5> Modifying the Google Font then reuse them</h5>
-			<pre> <code>
+					<h5>How to build a small component using CSS Grids</h5>
+					<h5>Modifying the Google Font then reuse them</h5>
+					<pre> <code>
 %heading {
 	font-family: $font-display;
 	font-weight: 400;
@@ -190,31 +201,31 @@ grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 
 			</code></pre>
 
-			<h5> Responsive without media querries</h5>
-			<pre><code>
+					<h5>Responsive without media querries</h5>
+					<pre><code>
 on main container
 display: grid;
 grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 			
 			</code></pre>
-			</div>
-			
-		<h3>f9v111 Building the Story Section - Part 1</h3>	
-			<div>
-				<h5>How to deal with overlapping grid items</h5>
-				<pre><code>
+				</div>
+
+				<h3>f9v111 Building the Story Section - Part 1</h3>
+				<div>
+					<h5>
+						Why images are special and behave differently than other
+						grid items;
+					</h5>
+meron daw silang intrinsince ration associate with them
+					<pre><code>
 
 				</code></pre>
-				<H5>Why images are special and behave differently than other grid items;</H5>
-				meron daw silang intrinsince ration associate with them
-				<pre><code>
+					<h5>
+						How to decide if flexbox is a better tool in certain
+						situations.
+					</h5>
 
-				</code></pre>
-				<h5>How to decide if flexbox is a better tool in certain
-					situations.
-				</h5>
-
-				<pre><code>
+					<pre><code>
 &__content {
 	background-color: $color-grey-light-1;
 
@@ -231,13 +242,11 @@ grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 	align-items: flex-start;
 }
 				</code></pre>
-
-
-			</div>
-			<h3>f9v114 Building the Homes Section - Part 2</h3>
-			<div>
-<h5>Positioning object without position:absolute</h5>
-				<pre><code>
+				</div>
+				<h3>f9v114 Building the Homes Section - Part 2</h3>
+				<div>
+					<h5>Positioning object without position:absolute</h5>
+					<pre><code>
 
 //placing heart icon in the top right
 // 1st grid-row: 1 / 2 - place it 1st on 1st row
@@ -255,9 +264,12 @@ grid-template-columns:repeat(auto-fit, minmax(25rem, 1fr));
 }
 
 				</code></pre>
+				</div>
+				<h3>115 Building the Gallery - Part 1</h3>
+				<div></div>
 			</div>
-			<h3>115 Building the Gallery - Part 1</h3>
-			Basahin mo  nalang ung code sa SASS.. .
+				
+				Basahin mo nalang ung code sa SASS.. .
 			</section>
 		</main>
 	</body>

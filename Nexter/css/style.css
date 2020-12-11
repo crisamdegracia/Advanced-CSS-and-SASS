@@ -79,11 +79,40 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center; }
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem; }
+  .nav-btn::before, .nav-btn::after {
+    content: "";
+    height: 2px;
+    width: 4.5rem;
+    background-color: #fff;
+    display: block; }
+  .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  .nav-btn::after {
+    transform: translateY(1.5rem); }
 
 .header {
   background-color: #54483A;
-  grid-column: full-start / col-end 6; }
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem; }
+  .header__logo {
+    height: 3rem; }
+  .header__seenon-logos img {
+    height: 2.5rem; }
 
 .realtors {
   background-color: #101d2c;
@@ -263,17 +292,32 @@ body {
 
 .footer {
   background-color: #101d2c;
-  grid-column: full-start / full-end; }
+  grid-column: full-start / full-end;
+  padding: 8rem; }
   .footer .nav {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    padding: 3rem;
-    font-size: 1.5rem;
-    font-family: "Josefin Sans", sans-serif;
-    text-transform: uppercase; }
-    .footer .nav__link {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center; }
+    .footer .nav__link:visited, .footer .nav__link:link {
+      font-size: 1.4rem;
       color: aliceblue;
-      text-decoration: none; }
+      text-decoration: none;
+      font-family: "Josefin Sans", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      display: block;
+      transition: all 0.2s ease-in; }
+    .footer .nav__link:hover {
+      background: #15273b;
+      transform: translateY(-0.3rem); }
   .footer .copyright {
-    justify-self: center; }
+    font-size: 1.4rem;
+    color: #ddd;
+    text-align: center;
+    margin-top: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%; }
