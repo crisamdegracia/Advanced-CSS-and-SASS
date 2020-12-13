@@ -16,17 +16,26 @@
 	display: grid;
 
 	//so 3 rows
-	grid-template-rows: 1fr min-content 6rem;
+	grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
 
 	//kasi kung min-content too narrow ung width
 	// max-content mas malaki ung occified na space
-	grid-template-columns: max-content;
+	// grid-template-columns: max-content;
+	
+	//binago ung max content
+	grid-template-columns: minmax( min-content, max-content);
+
 
 	// so the content is centered
 	justify-content: center;
 
 	grid-row-gap: 1.5rem;
 
+
+    @media only screen and (max-width: $bp-medium) {
+		grid-column: full-start / full-end;
+	
+    }
 
 
 	&__logo {
@@ -42,13 +51,15 @@
 
 
 	&__seenon-text {
-		color: $color-grey-light-2;
 		display: grid;
 		grid-template-columns: 1fr max-content 1fr;
 		grid-column-gap: 1.5rem;
-
 		// nag pa align vertically
 		align-items: center;
+		
+        font-size: 1.6rem;
+
+		color: $color-grey-light-2;
 
 		//eto ung line sa before and after text
 		&::before,
@@ -65,9 +76,10 @@
 		grid-template-columns: repeat(4, 1fr);
 		grid-column-gap: 3rem;
 		justify-items: center;
-
+		align-items: center;
 		img {
-			height: 2.5rem;
+			max-height: 2.5rem;
+			min-height: 100%;
 			filter: brightness(70%)
 		}
 	}
