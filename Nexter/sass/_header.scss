@@ -1,6 +1,7 @@
 .header {
 	background-color: $color-grey-dark-1;
-
+    padding: 8rem;
+    padding-top: 4rem;
 
 	// col-end 6, it will end in the 6th column
 	// because there are 8 columns
@@ -11,8 +12,20 @@
 	background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
     background-size: cover;
     background-position: center;
-    padding: 8rem;
-    padding-top: 4rem;
+
+	display: grid;
+
+	//so 3 rows
+	grid-template-rows: 1fr min-content 6rem;
+
+	//kasi kung min-content too narrow ung width
+	// max-content mas malaki ung occified na space
+	grid-template-columns: max-content;
+
+	// so the content is centered
+	justify-content: center;
+
+	grid-row-gap: 1.5rem;
 
 
 
@@ -20,14 +33,42 @@
 		height: 3rem;
 	}
 
-	&__seenon-text {
+	// ung original button whole width
+	// naging size of the content nalang
+	&__btn {
+		align-self: start;
+		justify-self: start;
+	}
 
+
+	&__seenon-text {
+		color: $color-grey-light-2;
+		display: grid;
+		grid-template-columns: 1fr max-content 1fr;
+		grid-column-gap: 1.5rem;
+
+		// nag pa align vertically
+		align-items: center;
+
+		//eto ung line sa before and after text
+		&::before,
+		&::after {
+			content: "";
+			height: 1px;
+			display: block;
+			background-color: currentColor;
+		}
 	}
 
 	&__seenon-logos {
-		
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 3rem;
+		justify-items: center;
+
 		img {
 			height: 2.5rem;
+			filter: brightness(70%)
 		}
 	}
 
