@@ -1,0 +1,86 @@
+
+/* SAM CSS */
+.__hidden {
+	display:none;
+}
+.__text1 h3 {
+	position: relative;
+	z-index: 99;
+}
+.__text1 h3::after {
+    content: "";
+    position: absolute;
+	/* kino start adjustment is to make the white underline overlap with the text as per design and to make the underline scale with the bigger font*/
+    bottom: 0.35em;
+	  height: 0.4em;
+	 	width: 18.6em;
+	/* kino end */
+    left: 27px;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.__contact-label{
+		position: relative;
+}
+.__contact-label label {
+	position: relative;
+	z-index: 2;
+}
+.__contact-label::before {
+	 content:'';
+	position: absolute;
+	left: -40px;
+	top: -57px;
+	width: 77px;
+	height: 77px;
+	background-color: #fff;
+	z-index: 1;
+}
+.__contact-submit input:hover {
+ background-color: var(--color-gold-light);
+	color: var(--color-gold-strong)
+}
+
+.__concept-text h2 {
+    position: relative;
+}
+.__concept-text h2::before {
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    top: -45px;
+    left: -40px;
+    z-index: -1;  
+}
+.__sns-text1 {
+	position: relative;
+	z-index:2;
+}
+.__sns-text1::after{
+	content: "";
+	position:absolute;
+	bottom: -5px;
+	left:0;
+	width: 140%;
+	height:20px;
+	background-color: #FFF5D7;
+	z-index: -1;
+	transform: translate( -15%, -10%)
+}
+
+@media screen and (max-width: 1067px){
+	.__contact-list {
+		flex-direction: column;
+	}
+	.__contact-label {
+		font-size: 20px
+	}
+	
+	#__contact-textarea .__contact-label {
+		 margin-bottom:40px;
+	}
+}
+/* SAM CSS END */
